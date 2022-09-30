@@ -165,6 +165,71 @@
     
     
     <article
+  id="post-Pyecharts_关系图"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/09/30/Pyecharts_%E5%85%B3%E7%B3%BB%E5%9B%BE/"
+    >Pyecharts_关系图</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/09/30/Pyecharts_%E5%85%B3%E7%B3%BB%E5%9B%BE/" class="article-date">
+  <time datetime="2022-09-30T12:49:09.000Z" itemprop="datePublished">2022-09-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Pyecharts/">Pyecharts</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="关系图"><a href="#关系图" class="headerlink" title="关系图"></a>关系图</h1><p><img src="/2022/09/30/Pyecharts_%E5%85%B3%E7%B3%BB%E5%9B%BE/graph.png" alt="graph"></p>
+<h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Graph</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br></pre></td></tr></table></figure>
+
+<h2 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h2><p>这里我们使用“悲惨世界”人物关系的数据，数据来源：<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/data/asset/data/les-miserables.json%E3%80%82%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AAjson%E6%95%B0%E6%8D%AE%EF%BC%8C%E6%88%91%E4%BB%AC%E5%85%88%E6%8A%8A%E5%AE%83%E6%8B%B7%E8%B4%9D%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%90%8C%E4%B8%80%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E3%80%82">https://echarts.apache.org/examples/data/asset/data/les-miserables.json。这是一个json数据，我们先把它拷贝在本地同一文件夹下。</a></p>
+<h3 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r&#x27;D:\Pycharm\myproject\Pyecharts\关系图\les-miserables.json&#x27;</span>, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = json.load(f)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(data)</span><br></pre></td></tr></table></figure>
+
+<p>这里with open()函数是用来读取文件的。我们一般读取文件时要先f.open()，在判断打开是否成功，成功则继续读取，否则显示错误提示。读完后我们还需f.close()。为了简化代码，python使用这个函数可以大大简化代码长度，简洁明了。</p>
+<p>open()中第一个参数是路径，我们一般复制过来的路径是右斜杠，采用r””可以直接使用，不使用r则需要把右斜杠转为左斜杠。“r”代表只读。</p>
+<h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">nodes = []</span><br><span class="line">idDict = <span class="built_in">dict</span>()</span><br><span class="line"><span class="keyword">for</span> node <span class="keyword">in</span> data[<span class="string">&quot;nodes&quot;</span>]:</span><br><span class="line">    nodes.append(</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;x&quot;</span>: node[<span class="string">&quot;x&quot;</span>],</span><br><span class="line">            <span class="string">&quot;y&quot;</span>: node[<span class="string">&quot;y&quot;</span>],</span><br><span class="line">            <span class="string">&quot;name&quot;</span>: node[<span class="string">&quot;name&quot;</span>],</span><br><span class="line">            <span class="string">&quot;symbolSize&quot;</span>: node[<span class="string">&quot;symbolSize&quot;</span>],</span><br><span class="line">            <span class="string">&quot;category&quot;</span>: node[<span class="string">&quot;category&quot;</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line">    idDict[node[<span class="string">&quot;id&quot;</span>]] = node[<span class="string">&quot;name&quot;</span>]</span><br><span class="line"></span><br><span class="line">link = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;source&quot;</span>: idDict[i[<span class="string">&quot;source&quot;</span>]],</span><br><span class="line">        <span class="string">&quot;target&quot;</span>: idDict[i[<span class="string">&quot;target&quot;</span>]]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data[<span class="string">&quot;links&quot;</span>]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">categories = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;name&quot;</span>: i[<span class="string">&quot;name&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data[<span class="string">&quot;categories&quot;</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>把json数据里的三类数据（点、连线、类别）分别读取到nodes、link、categories里。</p>
+<h2 id="开始画图"><a href="#开始画图" class="headerlink" title="开始画图"></a>开始画图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">G = (Graph(init_opts=opts.InitOpts(width=<span class="string">&quot;900px&quot;</span>, height=<span class="string">&quot;900px&quot;</span>))</span><br><span class="line">     .add(series_name=<span class="string">&quot;悲惨世界人物关系图&quot;</span>,</span><br><span class="line">          nodes=nodes,</span><br><span class="line">          links=link,</span><br><span class="line">          categories=categories,</span><br><span class="line">          layout=<span class="string">&quot;circular&quot;</span>,</span><br><span class="line">          is_rotate_label=<span class="literal">True</span>,</span><br><span class="line">          linestyle_opts=opts.LineStyleOpts(color=<span class="string">&quot;source&quot;</span>, curve=<span class="number">0.3</span>, opacity=<span class="number">0.7</span>))</span><br><span class="line">     .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">&quot;悲惨世界人物关系图&quot;</span>),</span><br><span class="line">                      legend_opts=opts.LegendOpts(orient=<span class="string">&quot;vertical&quot;</span>, pos_left=<span class="string">&quot;2%&quot;</span>, pos_top=<span class="string">&quot;20%&quot;</span>))</span><br><span class="line">     )</span><br><span class="line"></span><br><span class="line"><span class="comment"># G.render(&quot;graph.html&quot;)</span></span><br><span class="line"><span class="comment"># os.system(&quot;graph.html&quot;)</span></span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, G.render(<span class="string">&quot;graph.html&quot;</span>), <span class="string">&quot;graph.png&quot;</span>) <span class="comment"># 渲染图片</span></span><br></pre></td></tr></table></figure>
+
+<p>大功告成！</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
   id="post-Pyecharts之饼图"
   class="article article-type-post"
   itemscope
