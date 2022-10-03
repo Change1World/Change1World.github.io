@@ -100,6 +100,30 @@
       </categories>
   </entry>
   <entry>
+    <title>Pyecharts之饼图</title>
+    <url>/change1world/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h1><p><img src="/change1world/change1world/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/Pyecharts%E4%B9%8B%E9%A5%BC%E5%9B%BE/%E9%A5%BC%E5%9B%BE.png" alt="饼图"></p>
+<h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> pyecharts.<span class="built_in">globals</span> <span class="keyword">import</span> ThemeType</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Pie</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_phantomjs <span class="keyword">import</span> snapshot</span><br></pre></td></tr></table></figure>
+
+<h2 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">attr = [<span class="string">&quot;衬衫&quot;</span>, <span class="string">&quot;羊毛衫&quot;</span>, <span class="string">&quot;雪纺衫&quot;</span>, <span class="string">&quot;裤子&quot;</span>, <span class="string">&quot;高跟鞋&quot;</span>, <span class="string">&quot;袜子&quot;</span>]</span><br><span class="line">v1 = [<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">zip</span>(attr, v1)))</span><br></pre></td></tr></table></figure>
+
+<p>这里zip()将对象打包成一个元组，list()转为列表</p>
+<h2 id="开始做图"><a href="#开始做图" class="headerlink" title="开始做图"></a>开始做图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pie = (Pie(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))</span><br><span class="line">       .add(<span class="string">&quot;服装&quot;</span>, <span class="built_in">list</span>(<span class="built_in">zip</span>(attr, v1)),</span><br><span class="line">            radius=[<span class="number">40</span>, <span class="number">200</span>],</span><br><span class="line">            rosetype=<span class="string">&quot;radius&quot;</span>,</span><br><span class="line">            is_clockwise=<span class="literal">True</span>)</span><br><span class="line">       .set_global_opts(title_opts=opts.TitleOpts(<span class="string">&quot;服装销量&quot;</span>, pos_left=<span class="string">&quot;10%&quot;</span>),</span><br><span class="line">                        legend_opts=opts.LegendOpts(pos_right=<span class="string">&quot;10%&quot;</span>, orient=<span class="string">&quot;vertical&quot;</span>))</span><br><span class="line">       .set_colors([<span class="string">&quot;#5470c6&quot;</span>, <span class="string">&quot;#91cc75&quot;</span>,<span class="string">&quot; #fac858&quot;</span>, <span class="string">&quot;#ee6666&quot;</span>, <span class="string">&quot;#73c0de&quot;</span>, <span class="string">&quot;#3ba272&quot;</span>, <span class="string">&quot;#fc8452&quot;</span>, <span class="string">&quot;#9a60b4&quot;</span>])</span><br><span class="line">       )</span><br><span class="line"></span><br><span class="line">pie.render(<span class="string">&quot;饼图.html&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;饼图.html&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="渲染图片"><a href="#渲染图片" class="headerlink" title="渲染图片"></a>渲染图片</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">make_snapshot(snapshot, pie.render(), <span class="string">&quot;饼图.png&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>大功告成！</p>
+]]></content>
+      <categories>
+        <category>Pyecharts</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>article title</title>
+    <url>/change1world/2022/09/22/article-title/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Pyecharts之气泡图</title>
     <url>/change1world/2022/09/29/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/</url>
     <content><![CDATA[<h1 id="气泡图"><a href="#气泡图" class="headerlink" title="气泡图"></a>气泡图</h1><p><img src="/change1world/change1world/2022/09/29/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/Pyecharts_%E6%B0%94%E6%B3%A1%E5%9B%BE/%E6%B0%94%E6%B3%A1%E5%9B%BE.png" alt="气泡图"></p>
@@ -150,25 +174,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Pyecharts之饼图</title>
-    <url>/change1world/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h1><p><img src="/change1world/change1world/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/Pyecharts%E4%B9%8B%E9%A5%BC%E5%9B%BE/%E9%A5%BC%E5%9B%BE.png" alt="饼图"></p>
-<h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> pyecharts.<span class="built_in">globals</span> <span class="keyword">import</span> ThemeType</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Pie</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_phantomjs <span class="keyword">import</span> snapshot</span><br></pre></td></tr></table></figure>
-
-<h2 id="加载数据"><a href="#加载数据" class="headerlink" title="加载数据"></a>加载数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">attr = [<span class="string">&quot;衬衫&quot;</span>, <span class="string">&quot;羊毛衫&quot;</span>, <span class="string">&quot;雪纺衫&quot;</span>, <span class="string">&quot;裤子&quot;</span>, <span class="string">&quot;高跟鞋&quot;</span>, <span class="string">&quot;袜子&quot;</span>]</span><br><span class="line">v1 = [<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">zip</span>(attr, v1)))</span><br></pre></td></tr></table></figure>
-
-<p>这里zip()将对象打包成一个元组，list()转为列表</p>
-<h2 id="开始做图"><a href="#开始做图" class="headerlink" title="开始做图"></a>开始做图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pie = (Pie(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))</span><br><span class="line">       .add(<span class="string">&quot;服装&quot;</span>, <span class="built_in">list</span>(<span class="built_in">zip</span>(attr, v1)),</span><br><span class="line">            radius=[<span class="number">40</span>, <span class="number">200</span>],</span><br><span class="line">            rosetype=<span class="string">&quot;radius&quot;</span>,</span><br><span class="line">            is_clockwise=<span class="literal">True</span>)</span><br><span class="line">       .set_global_opts(title_opts=opts.TitleOpts(<span class="string">&quot;服装销量&quot;</span>, pos_left=<span class="string">&quot;10%&quot;</span>),</span><br><span class="line">                        legend_opts=opts.LegendOpts(pos_right=<span class="string">&quot;10%&quot;</span>, orient=<span class="string">&quot;vertical&quot;</span>))</span><br><span class="line">       .set_colors([<span class="string">&quot;#5470c6&quot;</span>, <span class="string">&quot;#91cc75&quot;</span>,<span class="string">&quot; #fac858&quot;</span>, <span class="string">&quot;#ee6666&quot;</span>, <span class="string">&quot;#73c0de&quot;</span>, <span class="string">&quot;#3ba272&quot;</span>, <span class="string">&quot;#fc8452&quot;</span>, <span class="string">&quot;#9a60b4&quot;</span>])</span><br><span class="line">       )</span><br><span class="line"></span><br><span class="line">pie.render(<span class="string">&quot;饼图.html&quot;</span>)</span><br><span class="line">os.system(<span class="string">&quot;饼图.html&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="渲染图片"><a href="#渲染图片" class="headerlink" title="渲染图片"></a>渲染图片</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">make_snapshot(snapshot, pie.render(), <span class="string">&quot;饼图.png&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>大功告成！</p>
-]]></content>
-      <categories>
-        <category>Pyecharts</category>
-      </categories>
-  </entry>
-  <entry>
     <title>这里是文章的标题</title>
     <url>/change1world/2022/09/22/%E7%BB%83%E4%B9%A0/</url>
     <content><![CDATA[<p>————————————————<br>版权声明：本文为CSDN博主「Half_A」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_44543463/article/details/119738094">https://blog.csdn.net/weixin_44543463/article/details/119738094</a></p>
@@ -181,11 +186,6 @@
         <tag>标签1</tag>
         <tag>标签2</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>article title</title>
-    <url>/change1world/2022/09/22/article-title/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
