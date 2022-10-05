@@ -28,7 +28,10 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;旭日图&quot;&gt;&lt;a href=&quot;#旭日图&quot; class=&quot;headerlink&quot; title=&quot;旭日图&quot;&gt;&lt;/a&gt;旭日图&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;h1&gt;旭日图&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/10/01/Pyecharts-%E6%97%AD%E6%97%A5%E5%9B%BE/sun.png&quot; alt=&quot;sun&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;导入包&quot;&gt;导入包&lt;/h2&gt;
+&lt;figure</summary>
         
       
     
@@ -51,7 +54,10 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;关系图&quot;&gt;&lt;a href=&quot;#关系图&quot; class=&quot;headerlink&quot; title=&quot;关系图&quot;&gt;&lt;/a&gt;关系图&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;h1&gt;关系图&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/graph.png&quot; alt=&quot;graph&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;导入包&quot;&gt;导入包&lt;/h2&gt;
+&lt;figure</summary>
         
       
     
@@ -74,7 +80,10 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;饼图&quot;&gt;&lt;a href=&quot;#饼图&quot; class=&quot;headerlink&quot; title=&quot;饼图&quot;&gt;&lt;/a&gt;饼图&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;h1&gt;饼图&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/%E9%A5%BC%E5%9B%BE.png&quot; alt=&quot;饼图&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;导入包&quot;&gt;导入包&lt;/h2&gt;
+&lt;figure</summary>
         
       
     
@@ -97,7 +106,10 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;柱状图&quot;&gt;&lt;a href=&quot;#柱状图&quot; class=&quot;headerlink&quot; title=&quot;柱状图&quot;&gt;&lt;/a&gt;柱状图&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;h1&gt;柱状图&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/09/30/Pyecharts-%E6%9F%B1%E7%8A%B6%E5%9B%BE/bar.png&quot; alt=&quot;bar&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;导入包&quot;&gt;导入包&lt;/h2&gt;
+&lt;figure</summary>
         
       
     
@@ -120,7 +132,9 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;气泡图&quot;&gt;&lt;a href=&quot;#气泡图&quot; class=&quot;headerlink&quot; title=&quot;气泡图&quot;&gt;&lt;/a&gt;气泡图&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+    <summary type="html">&lt;h1&gt;气泡图&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/09/29/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/%E6%B0%94%E6%B3%A1%E5%9B%BE.png&quot; alt=&quot;气泡图&quot;&gt;&lt;/p&gt;
+&lt;h2</summary>
         
       
     
