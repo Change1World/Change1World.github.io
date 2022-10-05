@@ -41,7 +41,9 @@
           font-size: 1.6rem;
         }
       </style>
-    <link rel="alternate" href="/atom.xml" title="活着就是为了改变世界" type="application/atom+xml">
+    
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="活着就是为了改变世界" type="application/atom+xml">
 </head>
   </html>
 </html>
@@ -85,7 +87,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">442</span>
+            <span class="post-count">376</span>
         </span>
     </span>
 
@@ -94,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2 分钟</span>
+            <span class="post-count">1 分钟</span>
         </span>
     </span>
 </div>
@@ -112,26 +114,26 @@
   <h1>柱状图</h1>
 <p><img src="/2022/09/30/Pyecharts-%E6%9F%B1%E7%8A%B6%E5%9B%BE/bar.png" alt="bar"></p>
 <h2 id="导入包">导入包</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Bar</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Bar</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="数据准备">数据准备</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">month = [<span class="string">&quot;Jan&quot;</span>, <span class="string">&quot;Feb&quot;</span>, <span class="string">&quot;Mar&quot;</span>, <span class="string">&quot;Apr&quot;</span>, <span class="string">&quot;May&quot;</span>, <span class="string">&quot;Jun&quot;</span>, <span class="string">&quot;Jul&quot;</span>, <span class="string">&quot;Aug&quot;</span>, <span class="string">&quot;Sep&quot;</span>, <span class="string">&quot;Oct&quot;</span>, <span class="string">&quot;Nov&quot;</span>, <span class="string">&quot;Dec&quot;</span>]</span><br><span class="line">v1 = [<span class="number">2.0</span>, <span class="number">4.9</span>, <span class="number">7.0</span>, <span class="number">23.2</span>, <span class="number">25.6</span>, <span class="number">76.7</span>, <span class="number">135.6</span>, <span class="number">162.2</span>, <span class="number">32.6</span>, <span class="number">20.0</span>, <span class="number">6.4</span>, <span class="number">3.3</span>]</span><br><span class="line">v2 = [<span class="number">2.6</span>, <span class="number">5.9</span>, <span class="number">9.0</span>, <span class="number">26.4</span>, <span class="number">28.7</span>, <span class="number">70.7</span>, <span class="number">175.6</span>, <span class="number">182.8</span>, <span class="number">48.7</span>, <span class="number">18.8</span>, <span class="number">6.0</span>, <span class="number">2.3</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">month = [<span class="string">"Jan"</span>, <span class="string">"Feb"</span>, <span class="string">"Mar"</span>, <span class="string">"Apr"</span>, <span class="string">"May"</span>, <span class="string">"Jun"</span>, <span class="string">"Jul"</span>, <span class="string">"Aug"</span>, <span class="string">"Sep"</span>, <span class="string">"Oct"</span>, <span class="string">"Nov"</span>, <span class="string">"Dec"</span>]</span><br><span class="line">v1 = [<span class="number">2.0</span>, <span class="number">4.9</span>, <span class="number">7.0</span>, <span class="number">23.2</span>, <span class="number">25.6</span>, <span class="number">76.7</span>, <span class="number">135.6</span>, <span class="number">162.2</span>, <span class="number">32.6</span>, <span class="number">20.0</span>, <span class="number">6.4</span>, <span class="number">3.3</span>]</span><br><span class="line">v2 = [<span class="number">2.6</span>, <span class="number">5.9</span>, <span class="number">9.0</span>, <span class="number">26.4</span>, <span class="number">28.7</span>, <span class="number">70.7</span>, <span class="number">175.6</span>, <span class="number">182.8</span>, <span class="number">48.7</span>, <span class="number">18.8</span>, <span class="number">6.0</span>, <span class="number">2.3</span>]</span><br></pre></td></tr></tbody></table></figure>
 <p>v1是蒸发量，v2是降水量</p>
 <h2 id="简单构图">简单构图</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">bar = (Bar()</span><br><span class="line">       .add_xaxis(month)</span><br><span class="line">       .add_yaxis(&quot;蒸发量&quot;, v1)</span><br><span class="line">       .add_yaxis(&quot;降水量&quot;, v2)</span><br><span class="line">       )</span><br><span class="line">bar.render(&quot;柱形图.html&quot;)</span><br><span class="line">os.system(&quot;柱形图.html&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">bar = (Bar()</span><br><span class="line">       .add_xaxis(month)</span><br><span class="line">       .add_yaxis("蒸发量", v1)</span><br><span class="line">       .add_yaxis("降水量", v2)</span><br><span class="line">       )</span><br><span class="line">bar.render("柱形图.html")</span><br><span class="line">os.system("柱形图.html")</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="添加标记线、标记点">添加标记线、标记点</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_series_opts(markline_opts=opts.MarkLineOpts(data=[opts.MarkLineItem(name=<span class="string">&quot;平均值&quot;</span>, type_=<span class="string">&#x27;average&#x27;</span>)]))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_series_opts(markline_opts=opts.MarkLineOpts(data=[opts.MarkLineItem(name=<span class="string">"平均值"</span>, type_=<span class="string">'average'</span>)]))</span><br></pre></td></tr></tbody></table></figure>
 <p>注意：这里data是一个列表，里面放着不同位置的标记线。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set_series_opts(markpoint_opts=opts.MarkLineOpts(data=[opts.MarkLineItem(name=<span class="string">&quot;最大值&quot;</span>, type_=<span class="string">&quot;max&quot;</span>), </span><br><span class="line">                                                       opts.MarkLineItem(name=<span class="string">&quot;最小值&quot;</span>, type_=<span class="string">&quot;min&quot;</span>)], </span><br><span class="line">                                                 symbol_size=<span class="number">55</span>, </span><br><span class="line">                                                 label_opts=opts.LabelOpts(position=<span class="string">&quot;inside&quot;</span>, color=<span class="string">&quot;#fff&quot;</span>)),</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set_series_opts(markpoint_opts=opts.MarkLineOpts(data=[opts.MarkLineItem(name=<span class="string">"最大值"</span>, type_=<span class="string">"max"</span>), </span><br><span class="line">                                                       opts.MarkLineItem(name=<span class="string">"最小值"</span>, type_=<span class="string">"min"</span>)], </span><br><span class="line">                                                 symbol_size=<span class="number">55</span>, </span><br><span class="line">                                                 label_opts=opts.LabelOpts(position=<span class="string">"inside"</span>, color=<span class="string">"#fff"</span>)),</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="去掉标签">去掉标签</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_series_opts(label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_series_opts(label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>))</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="交换xy轴">交换xy轴</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.reversal_axis()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.reversal_axis()</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="设置图例标题">设置图例标题</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set_global_opts(title_opts=opts.TitleOpts(<span class="string">&quot;全年蒸发量与降雨量&quot;</span>, pos_left=<span class="string">&quot;center&quot;</span>),</span><br><span class="line">                 legend_opts=opts.LegendOpts(pos_right=<span class="string">&quot;10%&quot;</span>, pos_top=<span class="string">&quot;40&quot;</span>, orient=<span class="string">&quot;vertical&quot;</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set_global_opts(title_opts=opts.TitleOpts(<span class="string">"全年蒸发量与降雨量"</span>, pos_left=<span class="string">"center"</span>),</span><br><span class="line">                 legend_opts=opts.LegendOpts(pos_right=<span class="string">"10%"</span>, pos_top=<span class="string">"40"</span>, orient=<span class="string">"vertical"</span>))</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="添加坐标轴标签">添加坐标轴标签</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set_global_opts(xaxis_opts=opts.AxisOpts(name=<span class="string">&quot;月份&quot;</span>),</span><br><span class="line">                yaxis_opts=opts.AxisOpts(name=<span class="string">&quot;蒸发量与降雨量&quot;</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set_global_opts(xaxis_opts=opts.AxisOpts(name=<span class="string">"月份"</span>),</span><br><span class="line">                yaxis_opts=opts.AxisOpts(name=<span class="string">"蒸发量与降雨量"</span>))</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="设置背景">设置背景</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bar(init_opts=opts.InitOpts(bg_color=<span class="string">&quot;white&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bar(init_opts=opts.InitOpts(bg_color=<span class="string">"white"</span>)</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="渲染图片">渲染图片</h2>
 <ul>
 <li>
@@ -147,7 +149,7 @@
 <p>将<strong>phantomjs.exe</strong>复制到：C:\Users\你的名字\AppData\Local\Microsoft\WindowsApps</p>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make_snapshot(snapshot, bar.render(), <span class="string">&quot;bar.png&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make_snapshot(snapshot, bar.render(), <span class="string">"bar.png"</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p>大功告成！</p>
  
       <!-- reward -->
