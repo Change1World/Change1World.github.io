@@ -54,104 +54,8 @@
     
       
     <main class="content on">
-      
-<section class="cover">
-    
-  <div class="cover-frame">
-    <div class="bg-box">
-      <img src="/images/cover1.jpg" alt="image frame" />
-    </div>
-    <div class="cover-inner text-center text-white">
-      <h1><a href="/">活着就是为了改变世界</a></h1>
-      <div id="subtitle-box">
-        
-        <span id="subtitle"></span>
-        
-      </div>
-      <div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="cover-learn-more">
-    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
-  </div>
-</section>
-
-
-
-<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
-
-
-<!-- Subtitle -->
-
-  <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
-        startDelay: 0,
-        typeSpeed: 200,
-        loop: true,
-        backSpeed: 100,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
-  </script>
-  
-<div id="main">
-  <section class="outer">
-  
-  
-  
-
-<div class="notice" style="margin-top:50px">
-    <i class="ri-heart-fill"></i>
-    <div class="notice-content" id="broad"></div>
-</div>
-<script type="text/javascript">
-    fetch('https://v1.hitokoto.cn')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("broad").innerHTML = data.hitokoto;
-        })
-        .catch(console.error)
-</script>
-
-<style>
-    .notice {
-        padding: 20px;
-        border: 1px dashed #e6e6e6;
-        color: #969696;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        background: #fbfbfb50;
-        border-radius: 10px;
-    }
-
-    .notice i {
-        float: left;
-        color: #999;
-        font-size: 16px;
-        padding-right: 10px;
-        vertical-align: middle;
-        margin-top: -2px;
-    }
-
-    .notice-content {
-        display: initial;
-        vertical-align: middle;
-    }
-</style>
-  
-  <article class="articles">
-    
-    
-    
-    
-    <article
+      <section class="outer">
+  <article
   id="post-README"
   class="article article-type-post"
   itemscope
@@ -163,9 +67,34 @@
     <div class="article-meta">
       <a href="/2022/10/23/README/" class="article-date">
   <time datetime="2022-10-22T16:19:14.266Z" itemprop="datePublished">2022-10-23</time>
-</a>    
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">15k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">52 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
       
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
   <p align="center" style="color:blue">
@@ -1566,478 +1495,96 @@
 
     <!-- copyright -->
     
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-    <article
-  id="post-Pyecharts-旭日图"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/10/01/Pyecharts-%E6%97%AD%E6%97%A5%E5%9B%BE/"
-    >Pyecharts-旭日图</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/10/01/Pyecharts-%E6%97%AD%E6%97%A5%E5%9B%BE/" class="article-date">
-  <time datetime="2022-10-01T01:55:28.000Z" itemprop="datePublished">2022-10-01</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Pyecharts/">Pyecharts</a>
-  </div>
-   
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1>旭日图</h1>
-<p><img src="/2022/10/01/Pyecharts-%E6%97%AD%E6%97%A5%E5%9B%BE/sun.png" alt="sun"></p>
-<h2 id="导入包">导入包</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Sunburst</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_phantomjs <span class="keyword">import</span> snapshot</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="加载数据">加载数据</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br></pre></td><td class="code"><pre><span class="line">data = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Flora"</span>,</span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#da0d68"</span>},</span><br><span class="line">        <span class="string">"children"</span>: [</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Black Tea"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#975e6d"</span>}},</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Floral"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#e0719c"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Chamomile"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#f99e1c"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Rose"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#ef5a78"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Jasmine"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#f7f1bd"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">        ],</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Fruity"</span>,</span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#da1d23"</span>},</span><br><span class="line">        <span class="string">"children"</span>: [</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Berry"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#dd4c51"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Blackberry"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#3e0317"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Raspberry"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#e62969"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Blueberry"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#6569b0"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Strawberry"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#ef2d36"</span>},</span><br><span class="line">                    },</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Dried Fruit"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#c94a44"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Raisin"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#b53b54"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Prune"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#a5446f"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Other Fruit"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#dd4c51"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Coconut"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#f2684b"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Cherry"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#e73451"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Pomegranate"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#e65656"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Pineapple"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#f89a1c"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Grape"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#aeb92c"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Apple"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#4eb849"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Peach"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#f68a5c"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Pear"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#baa635"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Citrus Fruit"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#f7a128"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Grapefruit"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#f26355"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Orange"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#e2631e"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Lemon"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#fde404"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Lime"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#7eb138"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">        ],</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Sour/\nFermented"</span>,</span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#ebb40f"</span>},</span><br><span class="line">        <span class="string">"children"</span>: [</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Sour"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#e1c315"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Sour Aromatics"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#9ea718"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Acetic Acid"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#94a76f"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Butyric Acid"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#d0b24f"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Isovaleric Acid"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#8eb646"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Citric Acid"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#faef07"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Malic Acid"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#c1ba07"</span>},</span><br><span class="line">                    },</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Alcohol/\nFremented"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#b09733"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Winey"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#8f1c53"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Whiskey"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#b34039"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Fremented"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#ba9232"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Overripe"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#8b6439"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">        ],</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Green/\nVegetative"</span>,</span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#187a2f"</span>},</span><br><span class="line">        <span class="string">"children"</span>: [</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Olive Oil"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#a2b029"</span>}},</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Raw"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#718933"</span>}},</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Green/\nVegetative"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#3aa255"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Under-ripe"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#a2bb2b"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Peapod"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#62aa3c"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Fresh"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#03a653"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Dark Green"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#038549"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Vegetative"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#28b44b"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Hay-like"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#a3a830"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Herb-like"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#7ac141"</span>},</span><br><span class="line">                    },</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Beany"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#5e9a80"</span>}},</span><br><span class="line">        ],</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Other"</span>,</span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#0aa3b5"</span>},</span><br><span class="line">        <span class="string">"children"</span>: [</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Papery/Musty"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#9db2b7"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Stale"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#8b8c90"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Cardboard"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#beb276"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Papery"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#fefef4"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Woody"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#744e03"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Moldy/Damp"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#a3a36f"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Musty/Dusty"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#c9b583"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Musty/Earthy"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#978847"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Animalic"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#9d977f"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Meaty Brothy"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#cc7b6a"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Phenolic"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#db646a"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Chemical"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#76c0cb"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Bitter"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#80a89d"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Salty"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#def2fd"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Medicinal"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#7a9bae"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Petroleum"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#039fb8"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Skunky"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#5e777b"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Rubber"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#120c0c"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">        ],</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Roasted"</span>,</span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#c94930"</span>},</span><br><span class="line">        <span class="string">"children"</span>: [</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Pipe Tobacco"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#caa465"</span>}},</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Tobacco"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#dfbd7e"</span>}},</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Burnt"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#be8663"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Acrid"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#b9a449"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Ashy"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#899893"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Smoky"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#a1743b"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Brown, Roast"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#894810"</span>},</span><br><span class="line">                    },</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Cereal"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#ddaf61"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Grain"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#b7906f"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Malt"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#eb9d5f"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">        ],</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Spices"</span>,</span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#ad213e"</span>},</span><br><span class="line">        <span class="string">"children"</span>: [</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Pungent"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#794752"</span>}},</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Pepper"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#cc3d41"</span>}},</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Brown Spice"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#b14d57"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Anise"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#c78936"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Nutmeg"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#8c292c"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Cinnamon"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#e5762e"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Clove"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#a16c5a"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">        ],</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Nutty/\nCocoa"</span>,</span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#a87b64"</span>},</span><br><span class="line">        <span class="string">"children"</span>: [</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Nutty"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#c78869"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Peanuts"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#d4ad12"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Hazelnut"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#9d5433"</span>}},</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Almond"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#c89f83"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Cocoa"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#bb764c"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Chocolate"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#692a19"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Dark Chocolate"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#470604"</span>},</span><br><span class="line">                    },</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">        ],</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"Sweet"</span>,</span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#e65832"</span>},</span><br><span class="line">        <span class="string">"children"</span>: [</span><br><span class="line">            {</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Brown Sugar"</span>,</span><br><span class="line">                <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#d45a59"</span>},</span><br><span class="line">                <span class="string">"children"</span>: [</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Molasses"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#310d0f"</span>}},</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Maple Syrup"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#ae341f"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"Caramelized"</span>,</span><br><span class="line">                        <span class="string">"value"</span>: <span class="number">1</span>,</span><br><span class="line">                        <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#d78823"</span>},</span><br><span class="line">                    },</span><br><span class="line">                    {<span class="string">"name"</span>: <span class="string">"Honey"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#da5c1f"</span>}},</span><br><span class="line">                ],</span><br><span class="line">            },</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Vanilla"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#f89a80"</span>}},</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Vanillin"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#f37674"</span>}},</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Overall Sweet"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#e75b68"</span>}},</span><br><span class="line">            {<span class="string">"name"</span>: <span class="string">"Sweet Aromatics"</span>, <span class="string">"value"</span>: <span class="number">1</span>, <span class="string">"itemStyle"</span>: {<span class="string">"color"</span>: <span class="string">"#d0545f"</span>}},</span><br><span class="line">        ],</span><br><span class="line">    },</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
-<p>唉，用pyecharts画旭日图太依赖这样的数据结构了，或许我们大多数人都很少用到这样的结构，在实用中我们通常用excel存储数据，类似这样</p>
-<p><img src="/2022/10/01/Pyecharts-%E6%97%AD%E6%97%A5%E5%9B%BE/%E5%B8%B8%E8%A7%81%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%A0%BC%E5%BC%8F.png" alt="graph"></p>
-<p>要改为合适的数据格式，可能需要编程做数据处理了，这里提供一种思路，可以筛选出第一级某标签对应的数据，再添加属性，再筛选二级标题下的数据，再添加属性，以此类推。这里我们主要以画图为主，先用json数据处理。</p>
-<h2 id="开始画图">开始画图</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sun = (Sunburst()</span><br><span class="line">       .add(<span class="string">""</span>, data_pair=data)</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line">sun.render(<span class="string">"旭日图.html"</span>)</span><br><span class="line">os.system(<span class="string">"旭日图.html"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="添加元素">添加元素</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sun = (Sunburst(init_opts=opts.InitOpts(width=<span class="string">"900px"</span>, height=<span class="string">"600px"</span>))</span><br><span class="line">       .add(<span class="string">""</span>, data_pair=data,</span><br><span class="line">            highlight_policy=<span class="string">"ancestor"</span>,  <span class="comment"># 高亮相关的扇形块</span></span><br><span class="line">            radius=[<span class="number">0</span>, <span class="string">"95%"</span>],  <span class="comment"># 数组的第一项是内半径，第二项是外半径。</span></span><br><span class="line">            sort_=<span class="string">"null"</span>,  <span class="comment"># 排序方式)</span></span><br><span class="line">       .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"饮料风味旭日图"</span>))</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
-<p>sort_可选’descendant’：高亮该扇形块和后代元素，其他元素将被淡化；</p>
-<p>​				‘ancestor’：高亮该扇形块和祖先元素；</p>
-<p>​				‘self’：只高亮自身；</p>
-<p>​				‘none’：不会淡化其他元素。</p>
-<h2 id="设置层级">设置层级</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">levels=[</span><br><span class="line">    {},</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"r0"</span>: <span class="string">"15%"</span>,  <span class="comment"># 第一层内半径</span></span><br><span class="line">        <span class="string">"r"</span>: <span class="string">"35%"</span>,  <span class="comment"># 第一层外半径，100%是到达画框边界</span></span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"borderWidth"</span>: <span class="number">2</span>},  <span class="comment"># 边框宽度</span></span><br><span class="line">        <span class="string">"label"</span>: {<span class="string">"rotate"</span>: <span class="string">'tangential'</span>},  <span class="comment"># 标签旋转角度，这里表示全按切线方向，一定还有其他选项，目前没找全。radial-径向；tangential-切向</span></span><br><span class="line">    },</span><br><span class="line">    {<span class="string">"r0"</span>: <span class="string">"35%"</span>, <span class="string">"r"</span>: <span class="string">"70%"</span>, <span class="string">"label"</span>: {<span class="string">"align"</span>: <span class="string">"right"</span>}},  <span class="comment"># 对齐方式</span></span><br><span class="line">    {</span><br><span class="line">        <span class="string">"r0"</span>: <span class="string">"70%"</span>,</span><br><span class="line">        <span class="string">"r"</span>: <span class="string">"72%"</span>,</span><br><span class="line">        <span class="string">"label"</span>: {<span class="string">"position"</span>: <span class="string">"outside"</span>, <span class="string">"padding"</span>: <span class="number">3</span>, <span class="string">"silent"</span>: <span class="literal">False</span>},  <span class="comment"># padding 内边距;不需要使用Fundebug为True</span></span><br><span class="line">        <span class="string">"itemStyle"</span>: {<span class="string">"borderWidth"</span>: <span class="number">3</span>},</span><br><span class="line">    },</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
-<p>网上没有搜到详细的教程，感觉可能是CSS代码，可能触及到知识的边缘了。</p>
-<p>大功告成！</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
     
     <footer class="article-footer">
        
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-    <article
-  id="post-Pyecharts-关系图"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/"
-    >Pyecharts-关系图</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/" class="article-date">
-  <time datetime="2022-09-30T12:49:09.000Z" itemprop="datePublished">2022-09-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Pyecharts/">Pyecharts</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1>关系图</h1>
-<img src="/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/graph.png" style="zoom: 30">
-<h2 id="导入包">导入包</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Graph</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="准备数据">准备数据</h2>
-<p>这里我们使用“悲惨世界”人物关系的数据，数据来源：<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/data/asset/data/les-miserables.json">https://echarts.apache.org/examples/data/asset/data/les-miserables.json</a></p>
-<p>这是一个json数据，我们先把它拷贝在本地同一文件夹下。</p>
-<h3 id="读取">读取</h3>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r'D:\Pycharm\myproject\Pyecharts\关系图\les-miserables.json'</span>, <span class="string">"r"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = json.load(f)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(data)</span><br></pre></td></tr></tbody></table></figure>
-<p>这里with open()函数是用来读取文件的。我们一般读取文件时要先f.open()，在判断打开是否成功，成功则继续读取，否则显示错误提示。读完后我们还需f.close()。为了简化代码，python使用这个函数可以大大简化代码长度，简洁明了。</p>
-<p>open()中第一个参数是路径，我们一般复制过来的路径是右斜杠，采用r""可以直接使用，不使用r则需要把右斜杠转为左斜杠。“r”代表只读。</p>
-<h3 id="数据处理">数据处理</h3>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">nodes = []</span><br><span class="line">idDict = <span class="built_in">dict</span>()</span><br><span class="line"><span class="keyword">for</span> node <span class="keyword">in</span> data[<span class="string">"nodes"</span>]:</span><br><span class="line">    nodes.append(</span><br><span class="line">        {</span><br><span class="line">            <span class="string">"x"</span>: node[<span class="string">"x"</span>],</span><br><span class="line">            <span class="string">"y"</span>: node[<span class="string">"y"</span>],</span><br><span class="line">            <span class="string">"name"</span>: node[<span class="string">"name"</span>],</span><br><span class="line">            <span class="string">"symbolSize"</span>: node[<span class="string">"symbolSize"</span>],</span><br><span class="line">            <span class="string">"category"</span>: node[<span class="string">"category"</span>]</span><br><span class="line">        }</span><br><span class="line">    )</span><br><span class="line">    idDict[node[<span class="string">"id"</span>]] = node[<span class="string">"name"</span>]</span><br><span class="line"></span><br><span class="line">link = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"source"</span>: idDict[i[<span class="string">"source"</span>]],</span><br><span class="line">        <span class="string">"target"</span>: idDict[i[<span class="string">"target"</span>]]</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data[<span class="string">"links"</span>]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">categories = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: i[<span class="string">"name"</span>]</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data[<span class="string">"categories"</span>]</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
-<p>把json数据里的三类数据（点、连线、类别）分别读取到nodes、link、categories里。</p>
-<h2 id="开始画图">开始画图</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">G = (Graph(init_opts=opts.InitOpts(width=<span class="string">"900px"</span>, height=<span class="string">"900px"</span>))</span><br><span class="line">     .add(series_name=<span class="string">"悲惨世界人物关系图"</span>,</span><br><span class="line">          nodes=nodes,</span><br><span class="line">          links=link,</span><br><span class="line">          categories=categories,</span><br><span class="line">          layout=<span class="string">"circular"</span>,</span><br><span class="line">          is_rotate_label=<span class="literal">True</span>,</span><br><span class="line">          linestyle_opts=opts.LineStyleOpts(color=<span class="string">"source"</span>, curve=<span class="number">0.3</span>, opacity=<span class="number">0.7</span>))</span><br><span class="line">     .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"悲惨世界人物关系图"</span>),</span><br><span class="line">                      legend_opts=opts.LegendOpts(orient=<span class="string">"vertical"</span>, pos_left=<span class="string">"2%"</span>, pos_top=<span class="string">"20%"</span>))</span><br><span class="line">     )</span><br><span class="line"></span><br><span class="line"><span class="comment"># G.render("graph.html")</span></span><br><span class="line"><span class="comment"># os.system("graph.html")</span></span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, G.render(<span class="string">"graph.html"</span>), <span class="string">"graph.png"</span>) <span class="comment"># 渲染图片</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="后来又摸索出一种方法">后来又摸索出一种方法</h3>
-<p>我准备了excel数据，这里我使用了这个网站（<a target="_blank" rel="noopener" href="https://uutool.cn/json2excel/">JSON转Excel - UU在线工具 (uutool.cn)</a>）把json数据保存为excel数据，因为我们一般准备的数据是excel数据，导入后使用to_json()把dataframe转为json数据，之后再做处理。</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data = pd.read_excel(<span class="string">r"node.xlsx"</span>)</span><br><span class="line">nodes = <span class="built_in">eval</span>(data.to_json(orient=<span class="string">"records"</span>, force_ascii=<span class="literal">False</span>))</span><br><span class="line"><span class="built_in">print</span>(nodes)</span><br><span class="line">data1 = pd.read_excel(<span class="string">r"link.xlsx"</span>)</span><br><span class="line">link = <span class="built_in">eval</span>(data1.to_json(orient=<span class="string">"records"</span>, force_ascii=<span class="literal">False</span>))</span><br></pre></td></tr></tbody></table></figure>
-<p>这里to_json()函数里orient参数详见https://blog.csdn.net/qq_41780234/article/details/84990551</p>
-<p>注意这里转换完的json数据是字符串格式，需要eval()函数去掉两边的引号，转为list格式。</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">links = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"source"</span>: nodes[i[<span class="string">"source"</span>]][<span class="string">"name"</span>],</span><br><span class="line">        <span class="string">"target"</span>: nodes[i[<span class="string">"target"</span>]][<span class="string">"name"</span>]</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> link</span><br><span class="line">]</span><br><span class="line"><span class="comment"># print(links)</span></span><br><span class="line">categories = [{<span class="string">"name"</span>: <span class="string">"A"</span>}, {<span class="string">"name"</span>: <span class="string">"B"</span>}, {<span class="string">"name"</span>: <span class="string">"C"</span>}, {<span class="string">"name"</span>: <span class="string">"D"</span>}, {<span class="string">"name"</span>: <span class="string">"E"</span>},</span><br><span class="line">              {<span class="string">"name"</span>: <span class="string">"F"</span>}, {<span class="string">"name"</span>: <span class="string">"G"</span>}, {<span class="string">"name"</span>: <span class="string">"H"</span>}, {<span class="string">"name"</span>: <span class="string">"I"</span>}]</span><br></pre></td></tr></tbody></table></figure>
-<p>这是对link数据的处理。</p>
-<p>接下来画图的代码就和上面一样啦！</p>
-<p>大功告成！</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-    <article
-  id="post-Pyecharts-饼图"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/"
-    >Pyecharts-饼图</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/" class="article-date">
-  <time datetime="2022-09-30T07:44:23.000Z" itemprop="datePublished">2022-09-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Pyecharts/">Pyecharts</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1>饼图</h1>
-<p><img src="/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/%E9%A5%BC%E5%9B%BE.png" alt="饼图"></p>
-<h2 id="导入包">导入包</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> pyecharts.<span class="built_in">globals</span> <span class="keyword">import</span> ThemeType</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Pie</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_phantomjs <span class="keyword">import</span> snapshot</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="加载数据">加载数据</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">attr = [<span class="string">"衬衫"</span>, <span class="string">"羊毛衫"</span>, <span class="string">"雪纺衫"</span>, <span class="string">"裤子"</span>, <span class="string">"高跟鞋"</span>, <span class="string">"袜子"</span>]</span><br><span class="line">v1 = [<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">zip</span>(attr, v1)))</span><br></pre></td></tr></tbody></table></figure>
-<p>这里zip()将对象打包成一个元组，list()转为列表</p>
-<p>另外一种处理数据的方法:</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data_pair = []</span><br><span class="line"><span class="keyword">for</span> x, y, c <span class="keyword">in</span> <span class="built_in">zip</span>(attr, v1, [<span class="string">'#5470c6'</span>, <span class="string">'#91cc75'</span>, <span class="string">'#fac858'</span>, <span class="string">'#ee6666'</span>, <span class="string">'#73c0de'</span>, <span class="string">'#3ba272'</span>, <span class="string">'#fc8452'</span>, <span class="string">'#9a60b4'</span>, <span class="string">'#ea7ccc'</span>]):</span><br><span class="line">    data_pair.append(opts.PieItem(</span><br><span class="line">        name=x,</span><br><span class="line">        value=y,</span><br><span class="line">        itemstyle_opts=opts.ItemStyleOpts(color=c)</span><br><span class="line">    ))</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="开始做图">开始做图</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pie = (Pie(init_opts=opts.InitOpts(theme=ThemeType.MACARONS))</span><br><span class="line">       .add(<span class="string">"服装"</span>, <span class="built_in">list</span>(<span class="built_in">zip</span>(attr, v1)),    <span class="comment"># 用第二种方法时，数据位置改为data_pair</span></span><br><span class="line">            radius=[<span class="number">40</span>, <span class="number">200</span>],</span><br><span class="line">            rosetype=<span class="string">"radius"</span>,</span><br><span class="line">            is_clockwise=<span class="literal">True</span>)</span><br><span class="line">       )</span><br><span class="line"></span><br><span class="line">pie.render(<span class="string">"饼图.html"</span>)</span><br><span class="line">os.system(<span class="string">"饼图.html"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="添加标题">添加标题</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.set_global_opts(title_opts=opts.TitleOpts(<span class="string">"服装销量"</span>, pos_left=<span class="string">"10%"</span>))</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="图例位置">图例位置</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.set_global_opts(legend_opts=opts.LegendOpts(pos_right=<span class="string">"10%"</span>, orient=<span class="string">"vertical"</span>))</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="设置颜色">设置颜色</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.set_colors([<span class="string">"#5470c6"</span>, <span class="string">"#91cc75"</span>,<span class="string">" #fac858"</span>, <span class="string">"#ee6666"</span>, <span class="string">"#73c0de"</span>, <span class="string">"#3ba272"</span>, <span class="string">"#fc8452"</span>, <span class="string">"#9a60b4"</span>])</span><br></pre></td></tr></tbody></table></figure>
-<p>使用第二种方法时，不需要设置颜色，因为数据中包含了颜色</p>
-<h2 id="渲染图片">渲染图片</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make_snapshot(snapshot, pie.render(), <span class="string">"饼图.png"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>大功告成！</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-    <article
-  id="post-Pyecharts-柱状图"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/09/30/Pyecharts-%E6%9F%B1%E7%8A%B6%E5%9B%BE/"
-    >Pyecharts-柱状图</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/09/30/Pyecharts-%E6%9F%B1%E7%8A%B6%E5%9B%BE/" class="article-date">
-  <time datetime="2022-09-29T16:00:00.000Z" itemprop="datePublished">2022-09-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Pyecharts/">Pyecharts</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1>柱状图</h1>
-<p><img src="/2022/09/30/Pyecharts-%E6%9F%B1%E7%8A%B6%E5%9B%BE/bar.png" alt="bar"></p>
-<h2 id="导入包">导入包</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Bar</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">from</span> pyecharts.render <span class="keyword">import</span> make_snapshot</span><br><span class="line"><span class="keyword">from</span> snapshot_phantomjs <span class="keyword">import</span> snapshot</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="数据准备">数据准备</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">month = [<span class="string">"Jan"</span>, <span class="string">"Feb"</span>, <span class="string">"Mar"</span>, <span class="string">"Apr"</span>, <span class="string">"May"</span>, <span class="string">"Jun"</span>, <span class="string">"Jul"</span>, <span class="string">"Aug"</span>, <span class="string">"Sep"</span>, <span class="string">"Oct"</span>, <span class="string">"Nov"</span>, <span class="string">"Dec"</span>]</span><br><span class="line">v1 = [<span class="number">2.0</span>, <span class="number">4.9</span>, <span class="number">7.0</span>, <span class="number">23.2</span>, <span class="number">25.6</span>, <span class="number">76.7</span>, <span class="number">135.6</span>, <span class="number">162.2</span>, <span class="number">32.6</span>, <span class="number">20.0</span>, <span class="number">6.4</span>, <span class="number">3.3</span>]</span><br><span class="line">v2 = [<span class="number">2.6</span>, <span class="number">5.9</span>, <span class="number">9.0</span>, <span class="number">26.4</span>, <span class="number">28.7</span>, <span class="number">70.7</span>, <span class="number">175.6</span>, <span class="number">182.8</span>, <span class="number">48.7</span>, <span class="number">18.8</span>, <span class="number">6.0</span>, <span class="number">2.3</span>]</span><br></pre></td></tr></tbody></table></figure>
-<p>v1是蒸发量，v2是降水量</p>
-<h2 id="简单构图">简单构图</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">bar = (Bar()</span><br><span class="line">       .add_xaxis(month)</span><br><span class="line">       .add_yaxis("蒸发量", v1)</span><br><span class="line">       .add_yaxis("降水量", v2)</span><br><span class="line">       )</span><br><span class="line">bar.render("柱形图.html")</span><br><span class="line">os.system("柱形图.html")</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="添加标记线、标记点">添加标记线、标记点</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.set_series_opts(markline_opts=opts.MarkLineOpts(data=[opts.MarkLineItem(name=<span class="string">"平均值"</span>, type_=<span class="string">'average'</span>)]))</span><br></pre></td></tr></tbody></table></figure>
-<p>注意：这里data是一个列表，里面放着不同位置的标记线。</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set_series_opts(markpoint_opts=opts.MarkLineOpts(data=[opts.MarkLineItem(name=<span class="string">"最大值"</span>, type_=<span class="string">"max"</span>), </span><br><span class="line">                                                       opts.MarkLineItem(name=<span class="string">"最小值"</span>, type_=<span class="string">"min"</span>)], </span><br><span class="line">                                                 symbol_size=<span class="number">55</span>, </span><br><span class="line">                                                 label_opts=opts.LabelOpts(position=<span class="string">"inside"</span>, color=<span class="string">"#fff"</span>)),</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="去掉标签">去掉标签</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_series_opts(label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>))</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="交换xy轴">交换xy轴</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.reversal_axis()</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="设置图例标题">设置图例标题</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set_global_opts(title_opts=opts.TitleOpts(<span class="string">"全年蒸发量与降雨量"</span>, pos_left=<span class="string">"center"</span>),</span><br><span class="line">                 legend_opts=opts.LegendOpts(pos_right=<span class="string">"10%"</span>, pos_top=<span class="string">"40"</span>, orient=<span class="string">"vertical"</span>))</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="添加坐标轴标签">添加坐标轴标签</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set_global_opts(xaxis_opts=opts.AxisOpts(name=<span class="string">"月份"</span>),</span><br><span class="line">                yaxis_opts=opts.AxisOpts(name=<span class="string">"蒸发量与降雨量"</span>))</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="设置背景">设置背景</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Bar(init_opts=opts.InitOpts(bg_color=<span class="string">"white"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="渲染图片">渲染图片</h2>
-<ul>
-<li>
-<p>下载<a target="_blank" rel="noopener" href="https://phantomjs.org/download.html">Download PhantomJS</a></p>
-</li>
-<li>
-<p>将<strong>phantomjs.exe</strong>所在的<strong>bin</strong>目录加入到环境变量（路径无中文）。配置成功后，可以在命令行下测试一下，输入：<strong>phantomjs</strong>，如果可以进入到<strong>PhantomJS</strong>的命令行，那么就证明配置完成了。</p>
-</li>
-<li>
-<p>pip install snapshot-phantomjs</p>
-</li>
-<li>
-<p>将<strong>phantomjs.exe</strong>复制到：C:\Users\你的名字\AppData\Local\Microsoft\WindowsApps</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make_snapshot(snapshot, bar.render(), <span class="string">"bar.png"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>大功告成！</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-    <article
-  id="post-Pyecharts-气泡图"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/09/29/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/"
-    >Pyecharts-气泡图</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/09/29/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/" class="article-date">
-  <time datetime="2022-09-28T16:00:00.000Z" itemprop="datePublished">2022-09-29</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Pyecharts/">Pyecharts</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1>气泡图</h1>
-<p><img src="/2022/09/29/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/%E6%B0%94%E6%B3%A1%E5%9B%BE.png" alt="气泡图"></p>
-<h2 id="导入所需要的包">导入所需要的包</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pyecharts.commons.utils <span class="keyword">import</span> JsCode</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="读取数据">读取数据</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df1 = pd.read_excel(<span class="string">"气泡图数据.xlsx"</span>, sheet_name=<span class="number">0</span>, header=<span class="number">0</span>)</span><br><span class="line">df2 = pd.read_excel(<span class="string">"气泡图数据.xlsx"</span>, sheet_name=<span class="number">1</span>, header=<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="先画1990年">先画1990年</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scatter1 = (Scatter()</span><br><span class="line">            .add_xaxis(df1[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"1990年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df1.values.tolist()])</span><br><span class="line">            )</span><br><span class="line">scatter1.render(<span class="string">"气泡图.html"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>df1.values：把dateframe转list，取出其中的“人均寿命、GDP总量”这三列。</p>
-<h2 id="再画2015年">再画2015年</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scatter2 = (Scatter()</span><br><span class="line">            .add_xaxis(df2[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"2015年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df2.values.tolist()])</span><br><span class="line">            )</span><br><span class="line">scatter1 = scatter1.overlap(scatter2)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="设置坐标轴">设置坐标轴</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scatter1 = (Scatter()</span><br><span class="line">            .add_xaxis(df1[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"1990年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df1.values.tolist()])</span><br><span class="line">            .set_global_opts(xaxis_opts=opts.AxisOpts(name=<span class="string">"人均GDP"</span>, type_=<span class="string">"value"</span>),</span><br><span class="line">                             yaxis_opts=opts.AxisOpts(name=<span class="string">"人均寿命"</span>, type_=<span class="string">"value"</span>, is_scale=<span class="literal">True</span>)</span><br><span class="line">                             )</span><br><span class="line">            )</span><br></pre></td></tr></tbody></table></figure>
-<p>坐标轴类型： ‘value’-连续数据；'category '-离散数据；‘time’-时间轴；‘log’-对数轴</p>
-<h2 id="JsCode">JsCode()</h2>
-<p>可以用以下代码来看参数怎么传递</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">item_color_js_2 = <span class="string">"""function(x) {console.log(x); return x;}"""</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="配置提示框">配置提示框</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tool_js = <span class="string">"""function (param) {return param.seriesName + ' — ' +param.data[3]+'&lt;br/&gt;'</span></span><br><span class="line"><span class="string">            +'人均GDP： '+param.data[0]+' 美元&lt;br/&gt;'</span></span><br><span class="line"><span class="string">            +'GDP总量： '+param.data[2]+' 美元&lt;br/&gt;'</span></span><br><span class="line"><span class="string">            +'人均寿命： '+param.data[1]+'岁';}"""</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">scatter1 = (Scatter()</span><br><span class="line">            .add_xaxis(df1[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"1990年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df1.values],</span><br><span class="line">                       label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>),  <span class="comment"># 关闭标签显示</span></span><br><span class="line">                       itemstyle_opts=opts.ItemStyleOpts(color=JsCode(item_color_js_1)))</span><br><span class="line">            .set_global_opts(xaxis_opts=opts.AxisOpts(name=<span class="string">"人均GDP"</span>, type_=<span class="string">"value"</span>),</span><br><span class="line">                             yaxis_opts=opts.AxisOpts(name=<span class="string">"人均寿命"</span>, type_=<span class="string">"value"</span>, is_scale=<span class="literal">True</span>),</span><br><span class="line">                             tooltip_opts = opts.TooltipOpts(formatter=JsCode(tool_js))</span><br><span class="line">                             )</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">scatter2 = (Scatter()</span><br><span class="line">            .add_xaxis(df2[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"2015年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df2.values.tolist()],</span><br><span class="line">                       label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>),  <span class="comment"># 关闭标签显示</span></span><br><span class="line">                       itemstyle_opts=opts.ItemStyleOpts(color=JsCode(item_color_js_2)))</span><br><span class="line">            )</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="配置颜色">配置颜色</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">item_color_js_1 = <span class="string">"""new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{</span></span><br><span class="line"><span class="string">                                        offset: 0,</span></span><br><span class="line"><span class="string">                                        color: 'rgb(251, 118, 123)'</span></span><br><span class="line"><span class="string">                                    }, {</span></span><br><span class="line"><span class="string">                                        offset: 1,</span></span><br><span class="line"><span class="string">                                        color: 'rgb(204, 46, 72)'</span></span><br><span class="line"><span class="string">                                    }])"""</span></span><br><span class="line"></span><br><span class="line">item_color_js_2 = <span class="string">"""new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{</span></span><br><span class="line"><span class="string">                                        offset: 0,</span></span><br><span class="line"><span class="string">                                        color: 'rgb(129, 227, 238)'</span></span><br><span class="line"><span class="string">                                    }, {</span></span><br><span class="line"><span class="string">                                        offset: 1,</span></span><br><span class="line"><span class="string">                                        color: 'rgb(25, 183, 207)'</span></span><br><span class="line"><span class="string">                                    }])"""</span></span><br></pre></td></tr></tbody></table></figure>
-<p>echarts.graphic.RadialGradient：径向渐变色设置，前三个参数分别是圆心 x, y 和半径，第四个参数是数组, 用于配置颜色的渐变过程. 每一项为一个对象, 包含offset和color两个参数. offset的范围是0 ~ 1, 用于表示位置（offset: 0表示0% 处的颜色；offset: 1表示100% 处的颜色）</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">scatter1 = (Scatter()</span><br><span class="line">            .add_xaxis(df1[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"1990年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df1.values],</span><br><span class="line">                       itemstyle_opts=opts.ItemStyleOpts(color=JsCode(item_color_js_1)))</span><br><span class="line">            .set_global_opts(xaxis_opts=opts.AxisOpts(name=<span class="string">"人均GDP"</span>, type_=<span class="string">"value"</span>),</span><br><span class="line">                             yaxis_opts=opts.AxisOpts(name=<span class="string">"人均寿命"</span>, type_=<span class="string">"value"</span>, is_scale=<span class="literal">True</span>)</span><br><span class="line">                             )</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">scatter2 = (Scatter()</span><br><span class="line">            .add_xaxis(df2[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"2015年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df2.values.tolist()],</span><br><span class="line">                       itemstyle_opts=opts.ItemStyleOpts(color=JsCode(item_color_js_2)))</span><br><span class="line">            )</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="映射GDP总量">映射GDP总量</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">symbol_js = <span class="string">"""function (data) {return Math.sqrt(data[2]) / 5e2;}"""</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">scatter1 = (Scatter()</span><br><span class="line">            .add_xaxis(df1[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"1990年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df1.values],</span><br><span class="line">                       symbol_size=JsCode(symbol_js),</span><br><span class="line">                       label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>),  <span class="comment"># 关闭标签显示</span></span><br><span class="line">                       itemstyle_opts=opts.ItemStyleOpts(color=JsCode(item_color_js_1)))</span><br><span class="line">            .set_global_opts(xaxis_opts=opts.AxisOpts(name=<span class="string">"人均GDP"</span>, type_=<span class="string">"value"</span>),</span><br><span class="line">                             yaxis_opts=opts.AxisOpts(name=<span class="string">"人均寿命"</span>, type_=<span class="string">"value"</span>, is_scale=<span class="literal">True</span>),</span><br><span class="line">                             tooltip_opts = opts.TooltipOpts(formatter=JsCode(tool_js))</span><br><span class="line">                             )</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">scatter2 = (Scatter()</span><br><span class="line">            .add_xaxis(df2[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"2015年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df2.values.tolist()],</span><br><span class="line">                       symbol_size=JsCode(symbol_js),</span><br><span class="line">                       label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>),  <span class="comment"># 关闭标签显示</span></span><br><span class="line">                       itemstyle_opts=opts.ItemStyleOpts(color=JsCode(item_color_js_2)),</span><br><span class="line">                       )</span><br><span class="line">            )</span><br></pre></td></tr></tbody></table></figure>
-<p>设置阴影</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">item_style_1 = {</span><br><span class="line">    <span class="string">'shadowBlur'</span>: <span class="number">10</span>,</span><br><span class="line">    <span class="string">'shadowColor'</span>: <span class="string">'rgba(120, 36, 50, 0.5)'</span>,</span><br><span class="line">    <span class="string">'shadowOffsetY'</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="string">'color'</span>: JsCode(item_color_js_1)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">item_style_2 = {</span><br><span class="line">    <span class="string">'shadowBlur'</span>: <span class="number">10</span>,</span><br><span class="line">    <span class="string">'shadowColor'</span>: <span class="string">'rgba(120, 36, 50, 0.5)'</span>,</span><br><span class="line">    <span class="string">'shadowOffsetY'</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="string">'color'</span>: JsCode(item_color_js_2)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">scatter1 = (Scatter()</span><br><span class="line">            .add_xaxis(df1[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"1990年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df1.values],</span><br><span class="line">                       symbol_size=JsCode(symbol_js),</span><br><span class="line">                       label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>),  <span class="comment"># 关闭标签显示</span></span><br><span class="line">                       itemstyle_opts=item_style_1)</span><br><span class="line">            .set_global_opts(xaxis_opts=opts.AxisOpts(name=<span class="string">"人均GDP"</span>, type_=<span class="string">"value"</span>),</span><br><span class="line">                             yaxis_opts=opts.AxisOpts(name=<span class="string">"人均寿命"</span>, type_=<span class="string">"value"</span>, is_scale=<span class="literal">True</span>),</span><br><span class="line">                             tooltip_opts = opts.TooltipOpts(formatter=JsCode(tool_js))</span><br><span class="line">                             )</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">scatter2 = (Scatter()</span><br><span class="line">            .add_xaxis(df2[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"2015年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df2.values.tolist()],</span><br><span class="line">                       symbol_size=JsCode(symbol_js),</span><br><span class="line">                       label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>),  <span class="comment"># 关闭标签显示</span></span><br><span class="line">                       itemstyle_opts=item_style_2,</span><br><span class="line">                       )</span><br><span class="line">            )</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="设置背景颜色、大小">设置背景颜色、大小</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">bg_color_js = <span class="string">"""</span></span><br><span class="line"><span class="string">new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{</span></span><br><span class="line"><span class="string">        offset: 0,</span></span><br><span class="line"><span class="string">        color: '#f7f8fa'</span></span><br><span class="line"><span class="string">    }, {</span></span><br><span class="line"><span class="string">        offset: 1,</span></span><br><span class="line"><span class="string">        color: '#cdd0d5'</span></span><br><span class="line"><span class="string">    }])"""</span></span><br><span class="line"></span><br><span class="line">Scatter(init_opts=opts.InitOpts(bg_color=JsCode(bg_color_js), width=<span class="string">'1000px'</span>, height=<span class="string">'800px'</span>))</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="设置分割线">设置分割线</h2>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">scatter1 = (Scatter(init_opts=opts.InitOpts(bg_color=JsCode(bg_color_js), width=<span class="string">'1000px'</span>, height=<span class="string">'800px'</span>))</span><br><span class="line">            .add_xaxis(df1[<span class="string">"人均GDP"</span>])</span><br><span class="line">            .add_yaxis(<span class="string">"1990年"</span>,</span><br><span class="line">                       [[i[<span class="number">2</span>], i[<span class="number">3</span>], i[<span class="number">0</span>]] <span class="keyword">for</span> i <span class="keyword">in</span> df1.values],</span><br><span class="line">                       symbol_size=JsCode(symbol_js),</span><br><span class="line">                       label_opts=opts.LabelOpts(is_show=<span class="literal">False</span>),  <span class="comment"># 关闭标签显示</span></span><br><span class="line">                       itemstyle_opts=item_style_1)</span><br><span class="line">            .set_global_opts(xaxis_opts=opts.AxisOpts(name=<span class="string">"人均GDP"</span>, type_=<span class="string">"value"</span>,   splitline_opts=opts.SplitLineOpts(is_show=<span class="literal">True</span>, linestyle_opts=opts.LineStyleOpts(type_=<span class="string">'dashed'</span>))),</span><br><span class="line">                             yaxis_opts=opts.AxisOpts(name=<span class="string">"人均寿命"</span>, type_=<span class="string">"value"</span>, is_scale=<span class="literal">True</span>,   splitline_opts=opts.SplitLineOpts(is_show=<span class="literal">True</span>, linestyle_opts=opts.LineStyleOpts(type_=<span class="string">'dashed'</span>))),</span><br><span class="line">                             tooltip_opts = opts.TooltipOpts(formatter=JsCode(tool_js))</span><br><span class="line">                             )</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="添加标题、图例位置">添加标题、图例位置</h2>
-<p>.set_global_opts中插入</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">legend_opts=opts.LegendOpts(is_show=<span class="literal">True</span>, pos_right=<span class="number">10</span>),</span><br><span class="line">title_opts=opts.TitleOpts(title=<span class="string">"1990 与 2015 年各国家人均寿命与 GDP"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>大功告成！</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-    <article
-  id="post-hello-world"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/09/21/hello-world/"
-    >Hello World</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/09/21/hello-world/" class="article-date">
-  <time datetime="2022-09-21T12:53:41.904Z" itemprop="datePublished">2022-09-21</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>哇哦！打开新世界的大门了！<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<p>做网站的初衷大概是太闲，想玩玩。</p>
-<p>又或许曾经想做一名程序员，毕竟做网站是一名程序员基本的技能嘛。</p>
-<p>所以就来试试。</p>
-<p>想着在茫茫的网络中找到一块属于自己的净土，这里没有市井中的流量，没有万众瞩目下的喧嚣，嘿嘿，只有我一个人躲在网络的边缘享受属于自己的安静。没事的时候就和自己聊聊，反正没人听到<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😝</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>（不想让听到的当然不会写这里啦）</p>
-<p>当然还有一个刚需，就是想找一个类似云笔记软件，不用每天搬砖（重重的书包），走哪只要有网都可以看。看了市面上所有的软件，没有心仪的，要么付费，要么有限制，要么要下一大堆的app（内存预警）。思来想去，还是网站最适合我，只要像名字一样记住网址，四海之下，足迹天涯，只要有网，就能用。我始终感觉，未来互联网的发展趋势就应该成为这样，摆脱了手机，摆脱了电脑，未来走到哪都是屏幕，你只需要登陆自己的网站，随时办公，随时学习，这才叫真正的解放生产力<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😂</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>。</p>
-<p>害，扯远啦。</p>
-<p>To live is to change the world!</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
-  </article>
-  
-
-  
-</section>
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
 </div>
 
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/2022/10/23/README/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/10/01/Pyecharts-%E6%97%AD%E6%97%A5%E5%9B%BE/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Pyecharts-旭日图</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -2185,6 +1732,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
