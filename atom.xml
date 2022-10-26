@@ -69,6 +69,31 @@
   </entry>
   
   <entry>
+    <title>Pyecharts-气泡图</title>
+    <link href="https://example.com/2022/09/30/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/"/>
+    <id>https://example.com/2022/09/30/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/</id>
+    <published>2022-09-30T12:49:09.000Z</published>
+    <updated>2022-10-26T16:05:29.340Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;气泡图&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/09/30/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/%E6%B0%94%E6%B3%A1%E5%9B%BE.png&quot; alt=&quot;气泡图&quot;&gt;&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Pyecharts" scheme="https://example.com/categories/Pyecharts/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Pyecharts-饼图</title>
     <link href="https://example.com/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/"/>
     <id>https://example.com/2022/09/30/Pyecharts-%E9%A5%BC%E5%9B%BE/</id>
@@ -141,31 +166,6 @@
     
     
     <category term="Physics" scheme="https://example.com/categories/Physics/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Pyecharts-气泡图</title>
-    <link href="https://example.com/2022/09/29/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/"/>
-    <id>https://example.com/2022/09/29/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/</id>
-    <published>2022-09-28T16:00:00.000Z</published>
-    <updated>2022-10-16T09:44:19.716Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;气泡图&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;/2022/09/29/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/%E6%B0%94%E6%B3%A1%E5%9B%BE.png&quot; alt=&quot;气泡图&quot;&gt;&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="Pyecharts" scheme="https://example.com/categories/Pyecharts/"/>
     
     
   </entry>
