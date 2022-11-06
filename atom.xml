@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2022-10-05T13:25:38.292Z</updated>
+  <updated>2022-11-06T08:50:46.814Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现多层嵌套的json数据和excel数据的转换</title>
+    <link href="https://example.com/2022/11/06/%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%B1%82%E5%B5%8C%E5%A5%97%E7%9A%84json%E6%95%B0%E6%8D%AE%E5%92%8Cexcel%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/"/>
+    <id>https://example.com/2022/11/06/%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%B1%82%E5%B5%8C%E5%A5%97%E7%9A%84json%E6%95%B0%E6%8D%AE%E5%92%8Cexcel%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/</id>
+    <published>2022-11-06T04:27:20.000Z</published>
+    <updated>2022-11-06T08:50:46.814Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;问题&lt;/h1&gt;
+&lt;p&gt;目标：实现多层嵌套的json数据和excel数据的转换&lt;/p&gt;
+&lt;p&gt;工具：python&lt;/p&gt;
+&lt;details&gt;
+  &lt;summary&gt;json数据转化结果&lt;/summary&gt;
+  &lt;pre&gt;&lt;code&gt;  
+  data = [
+    {
+</summary>
+        
+      
+    
+    
+    
+    <category term="Pyecharts" scheme="https://example.com/categories/Pyecharts/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Pyecharts-旭日图</title>

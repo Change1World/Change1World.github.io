@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Pyecharts-关系图</title>
+    <url>/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/</url>
+    <content><![CDATA[<h1>关系图</h1>
+<img src="/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/graph.png" style="zoom: 30">
+<h2 id="导入包">导入包</h2>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Graph</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="准备数据">准备数据</h2>
+<p>这里我们使用“悲惨世界”人物关系的数据，数据来源：<a href="https://echarts.apache.org/examples/data/asset/data/les-miserables.json">https://echarts.apache.org/examples/data/asset/data/les-miserables.json</a></p>
+<p>这是一个json数据，我们先把它拷贝在本地同一文件夹下。</p>
+<h3 id="读取">读取</h3>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r'D:\Pycharm\myproject\Pyecharts\关系图\les-miserables.json'</span>, <span class="string">"r"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = json.load(f)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(data)</span><br></pre></td></tr></tbody></table></figure>
+<p>这里with open()函数是用来读取文件的。我们一般读取文件时要先f.open()，在判断打开是否成功，成功则继续读取，否则显示错误提示。读完后我们还需f.close()。为了简化代码，python使用这个函数可以大大简化代码长度，简洁明了。</p>
+<p>open()中第一个参数是路径，我们一般复制过来的路径是右斜杠，采用r""可以直接使用，不使用r则需要把右斜杠转为左斜杠。“r”代表只读。</p>
+<h3 id="数据处理">数据处理</h3>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">nodes = []</span><br><span class="line">idDict = <span class="built_in">dict</span>()</span><br><span class="line"><span class="keyword">for</span> node <span class="keyword">in</span> data[<span class="string">"nodes"</span>]:</span><br><span class="line">    nodes.append(</span><br><span class="line">        {</span><br><span class="line">            <span class="string">"x"</span>: node[<span class="string">"x"</span>],</span><br><span class="line">            <span class="string">"y"</span>: node[<span class="string">"y"</span>],</span><br><span class="line">            <span class="string">"name"</span>: node[<span class="string">"name"</span>],</span><br><span class="line">            <span class="string">"symbolSize"</span>: node[<span class="string">"symbolSize"</span>],</span><br><span class="line">            <span class="string">"category"</span>: node[<span class="string">"category"</span>]</span><br><span class="line">        }</span><br><span class="line">    )</span><br><span class="line">    idDict[node[<span class="string">"id"</span>]] = node[<span class="string">"name"</span>]</span><br><span class="line"></span><br><span class="line">link = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"source"</span>: idDict[i[<span class="string">"source"</span>]],</span><br><span class="line">        <span class="string">"target"</span>: idDict[i[<span class="string">"target"</span>]]</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data[<span class="string">"links"</span>]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">categories = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: i[<span class="string">"name"</span>]</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data[<span class="string">"categories"</span>]</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<p>把json数据里的三类数据（点、连线、类别）分别读取到nodes、link、categories里。</p>
+<h2 id="开始画图">开始画图</h2>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">G = (Graph(init_opts=opts.InitOpts(width=<span class="string">"900px"</span>, height=<span class="string">"900px"</span>))</span><br><span class="line">     .add(series_name=<span class="string">"悲惨世界人物关系图"</span>,</span><br><span class="line">          nodes=nodes,</span><br><span class="line">          links=link,</span><br><span class="line">          categories=categories,</span><br><span class="line">          layout=<span class="string">"circular"</span>,</span><br><span class="line">          is_rotate_label=<span class="literal">True</span>,</span><br><span class="line">          linestyle_opts=opts.LineStyleOpts(color=<span class="string">"source"</span>, curve=<span class="number">0.3</span>, opacity=<span class="number">0.7</span>))</span><br><span class="line">     .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"悲惨世界人物关系图"</span>),</span><br><span class="line">                      legend_opts=opts.LegendOpts(orient=<span class="string">"vertical"</span>, pos_left=<span class="string">"2%"</span>, pos_top=<span class="string">"20%"</span>))</span><br><span class="line">     )</span><br><span class="line"></span><br><span class="line"><span class="comment"># G.render("graph.html")</span></span><br><span class="line"><span class="comment"># os.system("graph.html")</span></span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, G.render(<span class="string">"graph.html"</span>), <span class="string">"graph.png"</span>) <span class="comment"># 渲染图片</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="后来又摸索出一种方法">后来又摸索出一种方法</h3>
+<p>我准备了excel数据，这里我使用了这个网站（<a href="https://uutool.cn/json2excel/">JSON转Excel - UU在线工具 (uutool.cn)</a>）把json数据保存为excel数据，因为我们一般准备的数据是excel数据，导入后使用to_json()把dataframe转为json数据，之后再做处理。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">data = pd.read_excel(<span class="string">r"node.xlsx"</span>)</span><br><span class="line">nodes = <span class="built_in">eval</span>(data.to_json(orient=<span class="string">"records"</span>, force_ascii=<span class="literal">False</span>))</span><br><span class="line"><span class="built_in">print</span>(nodes)</span><br><span class="line">data1 = pd.read_excel(<span class="string">r"link.xlsx"</span>)</span><br><span class="line">link = <span class="built_in">eval</span>(data1.to_json(orient=<span class="string">"records"</span>, force_ascii=<span class="literal">False</span>))</span><br></pre></td></tr></tbody></table></figure>
+<p>这里to_json()函数里orient参数详见https://blog.csdn.net/qq_41780234/article/details/84990551</p>
+<p>注意这里转换完的json数据是字符串格式，需要eval()函数去掉两边的引号，转为list格式。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">links = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"source"</span>: nodes[i[<span class="string">"source"</span>]][<span class="string">"name"</span>],</span><br><span class="line">        <span class="string">"target"</span>: nodes[i[<span class="string">"target"</span>]][<span class="string">"name"</span>]</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> link</span><br><span class="line">]</span><br><span class="line"><span class="comment"># print(links)</span></span><br><span class="line">categories = [{<span class="string">"name"</span>: <span class="string">"A"</span>}, {<span class="string">"name"</span>: <span class="string">"B"</span>}, {<span class="string">"name"</span>: <span class="string">"C"</span>}, {<span class="string">"name"</span>: <span class="string">"D"</span>}, {<span class="string">"name"</span>: <span class="string">"E"</span>},</span><br><span class="line">              {<span class="string">"name"</span>: <span class="string">"F"</span>}, {<span class="string">"name"</span>: <span class="string">"G"</span>}, {<span class="string">"name"</span>: <span class="string">"H"</span>}, {<span class="string">"name"</span>: <span class="string">"I"</span>}]</span><br></pre></td></tr></tbody></table></figure>
+<p>这是对link数据的处理。</p>
+<p>接下来画图的代码就和上面一样啦！</p>
+<p>大功告成！</p>
+]]></content>
+      <categories>
+        <category>Pyecharts</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Pyecharts-旭日图</title>
     <url>/2022/10/01/Pyecharts-%E6%97%AD%E6%97%A5%E5%9B%BE/</url>
     <content><![CDATA[<h1>旭日图</h1>
@@ -71,39 +104,6 @@
 </li>
 </ul>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">make_snapshot(snapshot, bar.render(), <span class="string">"bar.png"</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>大功告成！</p>
-]]></content>
-      <categories>
-        <category>Pyecharts</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Pyecharts-关系图</title>
-    <url>/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/</url>
-    <content><![CDATA[<h1>关系图</h1>
-<img src="/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/graph.png" style="zoom: 30">
-<h2 id="导入包">导入包</h2>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Graph</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="准备数据">准备数据</h2>
-<p>这里我们使用“悲惨世界”人物关系的数据，数据来源：<a href="https://echarts.apache.org/examples/data/asset/data/les-miserables.json">https://echarts.apache.org/examples/data/asset/data/les-miserables.json</a></p>
-<p>这是一个json数据，我们先把它拷贝在本地同一文件夹下。</p>
-<h3 id="读取">读取</h3>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">r'D:\Pycharm\myproject\Pyecharts\关系图\les-miserables.json'</span>, <span class="string">"r"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = json.load(f)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(data)</span><br></pre></td></tr></tbody></table></figure>
-<p>这里with open()函数是用来读取文件的。我们一般读取文件时要先f.open()，在判断打开是否成功，成功则继续读取，否则显示错误提示。读完后我们还需f.close()。为了简化代码，python使用这个函数可以大大简化代码长度，简洁明了。</p>
-<p>open()中第一个参数是路径，我们一般复制过来的路径是右斜杠，采用r""可以直接使用，不使用r则需要把右斜杠转为左斜杠。“r”代表只读。</p>
-<h3 id="数据处理">数据处理</h3>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">nodes = []</span><br><span class="line">idDict = <span class="built_in">dict</span>()</span><br><span class="line"><span class="keyword">for</span> node <span class="keyword">in</span> data[<span class="string">"nodes"</span>]:</span><br><span class="line">    nodes.append(</span><br><span class="line">        {</span><br><span class="line">            <span class="string">"x"</span>: node[<span class="string">"x"</span>],</span><br><span class="line">            <span class="string">"y"</span>: node[<span class="string">"y"</span>],</span><br><span class="line">            <span class="string">"name"</span>: node[<span class="string">"name"</span>],</span><br><span class="line">            <span class="string">"symbolSize"</span>: node[<span class="string">"symbolSize"</span>],</span><br><span class="line">            <span class="string">"category"</span>: node[<span class="string">"category"</span>]</span><br><span class="line">        }</span><br><span class="line">    )</span><br><span class="line">    idDict[node[<span class="string">"id"</span>]] = node[<span class="string">"name"</span>]</span><br><span class="line"></span><br><span class="line">link = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"source"</span>: idDict[i[<span class="string">"source"</span>]],</span><br><span class="line">        <span class="string">"target"</span>: idDict[i[<span class="string">"target"</span>]]</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data[<span class="string">"links"</span>]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">categories = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"name"</span>: i[<span class="string">"name"</span>]</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data[<span class="string">"categories"</span>]</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
-<p>把json数据里的三类数据（点、连线、类别）分别读取到nodes、link、categories里。</p>
-<h2 id="开始画图">开始画图</h2>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">G = (Graph(init_opts=opts.InitOpts(width=<span class="string">"900px"</span>, height=<span class="string">"900px"</span>))</span><br><span class="line">     .add(series_name=<span class="string">"悲惨世界人物关系图"</span>,</span><br><span class="line">          nodes=nodes,</span><br><span class="line">          links=link,</span><br><span class="line">          categories=categories,</span><br><span class="line">          layout=<span class="string">"circular"</span>,</span><br><span class="line">          is_rotate_label=<span class="literal">True</span>,</span><br><span class="line">          linestyle_opts=opts.LineStyleOpts(color=<span class="string">"source"</span>, curve=<span class="number">0.3</span>, opacity=<span class="number">0.7</span>))</span><br><span class="line">     .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"悲惨世界人物关系图"</span>),</span><br><span class="line">                      legend_opts=opts.LegendOpts(orient=<span class="string">"vertical"</span>, pos_left=<span class="string">"2%"</span>, pos_top=<span class="string">"20%"</span>))</span><br><span class="line">     )</span><br><span class="line"></span><br><span class="line"><span class="comment"># G.render("graph.html")</span></span><br><span class="line"><span class="comment"># os.system("graph.html")</span></span><br><span class="line"></span><br><span class="line">make_snapshot(snapshot, G.render(<span class="string">"graph.html"</span>), <span class="string">"graph.png"</span>) <span class="comment"># 渲染图片</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="后来又摸索出一种方法">后来又摸索出一种方法</h3>
-<p>我准备了excel数据，这里我使用了这个网站（<a href="https://uutool.cn/json2excel/">JSON转Excel - UU在线工具 (uutool.cn)</a>）把json数据保存为excel数据，因为我们一般准备的数据是excel数据，导入后使用to_json()把dataframe转为json数据，之后再做处理。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">data = pd.read_excel(<span class="string">r"node.xlsx"</span>)</span><br><span class="line">nodes = <span class="built_in">eval</span>(data.to_json(orient=<span class="string">"records"</span>, force_ascii=<span class="literal">False</span>))</span><br><span class="line"><span class="built_in">print</span>(nodes)</span><br><span class="line">data1 = pd.read_excel(<span class="string">r"link.xlsx"</span>)</span><br><span class="line">link = <span class="built_in">eval</span>(data1.to_json(orient=<span class="string">"records"</span>, force_ascii=<span class="literal">False</span>))</span><br></pre></td></tr></tbody></table></figure>
-<p>这里to_json()函数里orient参数详见https://blog.csdn.net/qq_41780234/article/details/84990551</p>
-<p>注意这里转换完的json数据是字符串格式，需要eval()函数去掉两边的引号，转为list格式。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">links = [</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"source"</span>: nodes[i[<span class="string">"source"</span>]][<span class="string">"name"</span>],</span><br><span class="line">        <span class="string">"target"</span>: nodes[i[<span class="string">"target"</span>]][<span class="string">"name"</span>]</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> link</span><br><span class="line">]</span><br><span class="line"><span class="comment"># print(links)</span></span><br><span class="line">categories = [{<span class="string">"name"</span>: <span class="string">"A"</span>}, {<span class="string">"name"</span>: <span class="string">"B"</span>}, {<span class="string">"name"</span>: <span class="string">"C"</span>}, {<span class="string">"name"</span>: <span class="string">"D"</span>}, {<span class="string">"name"</span>: <span class="string">"E"</span>},</span><br><span class="line">              {<span class="string">"name"</span>: <span class="string">"F"</span>}, {<span class="string">"name"</span>: <span class="string">"G"</span>}, {<span class="string">"name"</span>: <span class="string">"H"</span>}, {<span class="string">"name"</span>: <span class="string">"I"</span>}]</span><br></pre></td></tr></tbody></table></figure>
-<p>这是对link数据的处理。</p>
-<p>接下来画图的代码就和上面一样啦！</p>
 <p>大功告成！</p>
 ]]></content>
       <categories>
@@ -202,6 +202,543 @@
 <p>害，扯远啦。</p>
 <p>To live is to change the world!</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>实现多层嵌套的json数据和excel数据的转换</title>
+    <url>/2022/11/06/%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%B1%82%E5%B5%8C%E5%A5%97%E7%9A%84json%E6%95%B0%E6%8D%AE%E5%92%8Cexcel%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<h1>问题</h1>
+<p>目标：实现多层嵌套的json数据和excel数据的转换</p>
+<p>工具：python</p>
+<details>
+  <summary>json数据转化结果</summary>
+  <pre><code>  
+  data = [
+    {
+        "name": "Flora",
+        "itemStyle": {"color": "#da0d68"},
+        "children": [
+            {"name": "Black Tea", "value": 1, "itemStyle": {"color": "#975e6d"}},
+            {
+                "name": "Floral",
+                "itemStyle": {"color": "#e0719c"},
+                "children": [
+                    {
+                        "name": "Chamomile",
+                        "value": 1,
+                        "itemStyle": {"color": "#f99e1c"},
+                    },
+                    {"name": "Rose", "value": 1, "itemStyle": {"color": "#ef5a78"}},
+                    {"name": "Jasmine", "value": 1, "itemStyle": {"color": "#f7f1bd"}},
+                ],
+            },
+        ],
+    },
+    {
+        "name": "Fruity",
+        "itemStyle": {"color": "#da1d23"},
+        "children": [
+            {
+                "name": "Berry",
+                "itemStyle": {"color": "#dd4c51"},
+                "children": [
+                    {
+                        "name": "Blackberry",
+                        "value": 1,
+                        "itemStyle": {"color": "#3e0317"},
+                    },
+                    {
+                        "name": "Raspberry",
+                        "value": 1,
+                        "itemStyle": {"color": "#e62969"},
+                    },
+                    {
+                        "name": "Blueberry",
+                        "value": 1,
+                        "itemStyle": {"color": "#6569b0"},
+                    },
+                    {
+                        "name": "Strawberry",
+                        "value": 1,
+                        "itemStyle": {"color": "#ef2d36"},
+                    },
+                ],
+            },
+            {
+                "name": "Dried Fruit",
+                "itemStyle": {"color": "#c94a44"},
+                "children": [
+                    {"name": "Raisin", "value": 1, "itemStyle": {"color": "#b53b54"}},
+                    {"name": "Prune", "value": 1, "itemStyle": {"color": "#a5446f"}},
+                ],
+            },
+            {
+                "name": "Other Fruit",
+                "itemStyle": {"color": "#dd4c51"},
+                "children": [
+                    {"name": "Coconut", "value": 1, "itemStyle": {"color": "#f2684b"}},
+                    {"name": "Cherry", "value": 1, "itemStyle": {"color": "#e73451"}},
+                    {
+                        "name": "Pomegranate",
+                        "value": 1,
+                        "itemStyle": {"color": "#e65656"},
+                    },
+                    {
+                        "name": "Pineapple",
+                        "value": 1,
+                        "itemStyle": {"color": "#f89a1c"},
+                    },
+                    {"name": "Grape", "value": 1, "itemStyle": {"color": "#aeb92c"}},
+                    {"name": "Apple", "value": 1, "itemStyle": {"color": "#4eb849"}},
+                    {"name": "Peach", "value": 1, "itemStyle": {"color": "#f68a5c"}},
+                    {"name": "Pear", "value": 1, "itemStyle": {"color": "#baa635"}},
+                ],
+            },
+            {
+                "name": "Citrus Fruit",
+                "itemStyle": {"color": "#f7a128"},
+                "children": [
+                    {
+                        "name": "Grapefruit",
+                        "value": 1,
+                        "itemStyle": {"color": "#f26355"},
+                    },
+                    {"name": "Orange", "value": 1, "itemStyle": {"color": "#e2631e"}},
+                    {"name": "Lemon", "value": 1, "itemStyle": {"color": "#fde404"}},
+                    {"name": "Lime", "value": 1, "itemStyle": {"color": "#7eb138"}},
+                ],
+            },
+        ],
+    },
+    {
+        "name": "Sour/\nFermented",
+        "itemStyle": {"color": "#ebb40f"},
+        "children": [
+            {
+                "name": "Sour",
+                "itemStyle": {"color": "#e1c315"},
+                "children": [
+                    {
+                        "name": "Sour Aromatics",
+                        "value": 1,
+                        "itemStyle": {"color": "#9ea718"},
+                    },
+                    {
+                        "name": "Acetic Acid",
+                        "value": 1,
+                        "itemStyle": {"color": "#94a76f"},
+                    },
+                    {
+                        "name": "Butyric Acid",
+                        "value": 1,
+                        "itemStyle": {"color": "#d0b24f"},
+                    },
+                    {
+                        "name": "Isovaleric Acid",
+                        "value": 1,
+                        "itemStyle": {"color": "#8eb646"},
+                    },
+                    {
+                        "name": "Citric Acid",
+                        "value": 1,
+                        "itemStyle": {"color": "#faef07"},
+                    },
+                    {
+                        "name": "Malic Acid",
+                        "value": 1,
+                        "itemStyle": {"color": "#c1ba07"},
+                    },
+                ],
+            },
+            {
+                "name": "Alcohol/\nFremented",
+                "itemStyle": {"color": "#b09733"},
+                "children": [
+                    {"name": "Winey", "value": 1, "itemStyle": {"color": "#8f1c53"}},
+                    {"name": "Whiskey", "value": 1, "itemStyle": {"color": "#b34039"}},
+                    {
+                        "name": "Fremented",
+                        "value": 1,
+                        "itemStyle": {"color": "#ba9232"},
+                    },
+                    {"name": "Overripe", "value": 1, "itemStyle": {"color": "#8b6439"}},
+                ],
+            },
+        ],
+    },
+    {
+        "name": "Green/\nVegetative",
+        "itemStyle": {"color": "#187a2f"},
+        "children": [
+            {"name": "Olive Oil", "value": 1, "itemStyle": {"color": "#a2b029"}},
+            {"name": "Raw", "value": 1, "itemStyle": {"color": "#718933"}},
+            {
+                "name": "Green/\nVegetative",
+                "itemStyle": {"color": "#3aa255"},
+                "children": [
+                    {
+                        "name": "Under-ripe",
+                        "value": 1,
+                        "itemStyle": {"color": "#a2bb2b"},
+                    },
+                    {"name": "Peapod", "value": 1, "itemStyle": {"color": "#62aa3c"}},
+                    {"name": "Fresh", "value": 1, "itemStyle": {"color": "#03a653"}},
+                    {
+                        "name": "Dark Green",
+                        "value": 1,
+                        "itemStyle": {"color": "#038549"},
+                    },
+                    {
+                        "name": "Vegetative",
+                        "value": 1,
+                        "itemStyle": {"color": "#28b44b"},
+                    },
+                    {"name": "Hay-like", "value": 1, "itemStyle": {"color": "#a3a830"}},
+                    {
+                        "name": "Herb-like",
+                        "value": 1,
+                        "itemStyle": {"color": "#7ac141"},
+                    },
+                ],
+            },
+            {"name": "Beany", "value": 1, "itemStyle": {"color": "#5e9a80"}},
+        ],
+    },
+    {
+        "name": "Other",
+        "itemStyle": {"color": "#0aa3b5"},
+        "children": [
+            {
+                "name": "Papery/Musty",
+                "itemStyle": {"color": "#9db2b7"},
+                "children": [
+                    {"name": "Stale", "value": 1, "itemStyle": {"color": "#8b8c90"}},
+                    {
+                        "name": "Cardboard",
+                        "value": 1,
+                        "itemStyle": {"color": "#beb276"},
+                    },
+                    {"name": "Papery", "value": 1, "itemStyle": {"color": "#fefef4"}},
+                    {"name": "Woody", "value": 1, "itemStyle": {"color": "#744e03"}},
+                    {
+                        "name": "Moldy/Damp",
+                        "value": 1,
+                        "itemStyle": {"color": "#a3a36f"},
+                    },
+                    {
+                        "name": "Musty/Dusty",
+                        "value": 1,
+                        "itemStyle": {"color": "#c9b583"},
+                    },
+                    {
+                        "name": "Musty/Earthy",
+                        "value": 1,
+                        "itemStyle": {"color": "#978847"},
+                    },
+                    {"name": "Animalic", "value": 1, "itemStyle": {"color": "#9d977f"}},
+                    {
+                        "name": "Meaty Brothy",
+                        "value": 1,
+                        "itemStyle": {"color": "#cc7b6a"},
+                    },
+                    {"name": "Phenolic", "value": 1, "itemStyle": {"color": "#db646a"}},
+                ],
+            },
+            {
+                "name": "Chemical",
+                "itemStyle": {"color": "#76c0cb"},
+                "children": [
+                    {"name": "Bitter", "value": 1, "itemStyle": {"color": "#80a89d"}},
+                    {"name": "Salty", "value": 1, "itemStyle": {"color": "#def2fd"}},
+                    {
+                        "name": "Medicinal",
+                        "value": 1,
+                        "itemStyle": {"color": "#7a9bae"},
+                    },
+                    {
+                        "name": "Petroleum",
+                        "value": 1,
+                        "itemStyle": {"color": "#039fb8"},
+                    },
+                    {"name": "Skunky", "value": 1, "itemStyle": {"color": "#5e777b"}},
+                    {"name": "Rubber", "value": 1, "itemStyle": {"color": "#120c0c"}},
+                ],
+            },
+        ],
+    },
+    {
+        "name": "Roasted",
+        "itemStyle": {"color": "#c94930"},
+        "children": [
+            {"name": "Pipe Tobacco", "value": 1, "itemStyle": {"color": "#caa465"}},
+            {"name": "Tobacco", "value": 1, "itemStyle": {"color": "#dfbd7e"}},
+            {
+                "name": "Burnt",
+                "itemStyle": {"color": "#be8663"},
+                "children": [
+                    {"name": "Acrid", "value": 1, "itemStyle": {"color": "#b9a449"}},
+                    {"name": "Ashy", "value": 1, "itemStyle": {"color": "#899893"}},
+                    {"name": "Smoky", "value": 1, "itemStyle": {"color": "#a1743b"}},
+                    {
+                        "name": "Brown, Roast",
+                        "value": 1,
+                        "itemStyle": {"color": "#894810"},
+                    },
+                ],
+            },
+            {
+                "name": "Cereal",
+                "itemStyle": {"color": "#ddaf61"},
+                "children": [
+                    {"name": "Grain", "value": 1, "itemStyle": {"color": "#b7906f"}},
+                    {"name": "Malt", "value": 1, "itemStyle": {"color": "#eb9d5f"}},
+                ],
+            },
+        ],
+    },
+    {
+        "name": "Spices",
+        "itemStyle": {"color": "#ad213e"},
+        "children": [
+            {"name": "Pungent", "value": 1, "itemStyle": {"color": "#794752"}},
+            {"name": "Pepper", "value": 1, "itemStyle": {"color": "#cc3d41"}},
+            {
+                "name": "Brown Spice",
+                "itemStyle": {"color": "#b14d57"},
+                "children": [
+                    {"name": "Anise", "value": 1, "itemStyle": {"color": "#c78936"}},
+                    {"name": "Nutmeg", "value": 1, "itemStyle": {"color": "#8c292c"}},
+                    {"name": "Cinnamon", "value": 1, "itemStyle": {"color": "#e5762e"}},
+                    {"name": "Clove", "value": 1, "itemStyle": {"color": "#a16c5a"}},
+                ],
+            },
+        ],
+    },
+    {
+        "name": "Nutty/\nCocoa",
+        "itemStyle": {"color": "#a87b64"},
+        "children": [
+            {
+                "name": "Nutty",
+                "itemStyle": {"color": "#c78869"},
+                "children": [
+                    {"name": "Peanuts", "value": 1, "itemStyle": {"color": "#d4ad12"}},
+                    {"name": "Hazelnut", "value": 1, "itemStyle": {"color": "#9d5433"}},
+                    {"name": "Almond", "value": 1, "itemStyle": {"color": "#c89f83"}},
+                ],
+            },
+            {
+                "name": "Cocoa",
+                "itemStyle": {"color": "#bb764c"},
+                "children": [
+                    {
+                        "name": "Chocolate",
+                        "value": 1,
+                        "itemStyle": {"color": "#692a19"},
+                    },
+                    {
+                        "name": "Dark Chocolate",
+                        "value": 1,
+                        "itemStyle": {"color": "#470604"},
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "name": "Sweet",
+        "itemStyle": {"color": "#e65832"},
+        "children": [
+            {
+                "name": "Brown Sugar",
+                "itemStyle": {"color": "#d45a59"},
+                "children": [
+                    {"name": "Molasses", "value": 1, "itemStyle": {"color": "#310d0f"}},
+                    {
+                        "name": "Maple Syrup",
+                        "value": 1,
+                        "itemStyle": {"color": "#ae341f"},
+                    },
+                    {
+                        "name": "Caramelized",
+                        "value": 1,
+                        "itemStyle": {"color": "#d78823"},
+                    },
+                    {"name": "Honey", "value": 1, "itemStyle": {"color": "#da5c1f"}},
+                ],
+            },
+            {"name": "Vanilla", "value": 1, "itemStyle": {"color": "#f89a80"}},
+            {"name": "Vanillin", "value": 1, "itemStyle": {"color": "#f37674"}},
+            {"name": "Overall Sweet", "value": 1, "itemStyle": {"color": "#e75b68"}},
+            {"name": "Sweet Aromatics", "value": 1, "itemStyle": {"color": "#d0545f"}},
+        ],
+    },
+	]
+  </code></pre>
+</details>
+<p>excel数据转化结果</p>
+<table>
+<thead>
+<tr>
+<th>name1</th>
+<th>color1</th>
+<th>name2</th>
+<th>color2</th>
+<th>name3</th>
+<th style="text-align:left">color3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flora</td>
+<td>#da0d68</td>
+<td>Black Tea</td>
+<td>#975e6d</td>
+<td>0</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td>Flora</td>
+<td>#da0d68</td>
+<td>Floral</td>
+<td>#e0719c</td>
+<td>Chamomile</td>
+<td style="text-align:left">#f99e1c</td>
+</tr>
+<tr>
+<td>Flora</td>
+<td>#da0d68</td>
+<td>Floral</td>
+<td>#e0719c</td>
+<td>Rose</td>
+<td style="text-align:left">#ef5a78</td>
+</tr>
+<tr>
+<td>Flora</td>
+<td>#da0d68</td>
+<td>Floral</td>
+<td>#e0719c</td>
+<td>Jasmine</td>
+<td style="text-align:left">#f7f1bd</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>#da1d23</td>
+<td>Berry</td>
+<td>#dd4c51</td>
+<td>Blackberry</td>
+<td style="text-align:left">#3e0317</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>#da1d23</td>
+<td>Berry</td>
+<td>#dd4c51</td>
+<td>Raspberry</td>
+<td style="text-align:left">#e62969</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>#da1d23</td>
+<td>Berry</td>
+<td>#dd4c51</td>
+<td>Blueberry</td>
+<td style="text-align:left">#6569b0</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>#da1d23</td>
+<td>Berry</td>
+<td>#dd4c51</td>
+<td>Strawberry</td>
+<td style="text-align:left">#ef2d36</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>#da1d23</td>
+<td>Dried Fruit</td>
+<td>#c94a44</td>
+<td>Raisin</td>
+<td style="text-align:left">#b53b54</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>#da1d23</td>
+<td>Dried Fruit</td>
+<td>#c94a44</td>
+<td>Prune</td>
+<td style="text-align:left">#a5446f</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>#da1d23</td>
+<td>Other Fruit</td>
+<td>#dd4c51</td>
+<td>Coconut</td>
+<td style="text-align:left">#f2684b</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>#da1d23</td>
+<td>Other Fruit</td>
+<td>#dd4c51</td>
+<td>Cherry</td>
+<td style="text-align:left">#e73451</td>
+</tr>
+<tr>
+<td>Fruity</td>
+<td>#da1d23</td>
+<td>Other Fruit</td>
+<td>#dd4c51</td>
+<td>Pomegranate</td>
+<td style="text-align:left">#e65656</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>tips: excel数据仅展示部分</p>
+</blockquote>
+<h2 id="Part1-多层嵌套json数据→excel数据">Part1: 多层嵌套json数据→excel数据</h2>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> data:</span><br><span class="line">    x = pd.json_normalize(i,</span><br><span class="line">                          record_path=[<span class="string">'children'</span>, <span class="string">'children'</span>], </span><br><span class="line">                          meta=[[<span class="string">'children'</span>, <span class="string">'name'</span>], [<span class="string">'children'</span>, <span class="string">'itemStyle'</span>, <span class="string">'color'</span>], <span class="string">"itemStyle"</span>, <span class="string">"name"</span>],</span><br><span class="line">                          record_prefix=<span class="string">'children-&gt;'</span>,</span><br><span class="line">                          meta_prefix=<span class="string">'father-&gt;'</span>,</span><br><span class="line">                          sep=<span class="string">'-&gt;'</span>,</span><br><span class="line">                          errors=<span class="string">'ignore'</span>)</span><br><span class="line">    df = pd.concat([df, x],axis=<span class="number">0</span>)</span><br><span class="line">df.to_csv(<span class="string">'1.csv'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>1、<strong>json_normalize用法：</strong></p>
+<ul>
+<li>
+<p>**第一个参数：**转换的json数据</p>
+</li>
+<li>
+<p>**record_path：**搜索路径。如果不设置这个参数，默认将json第一层数据转为dataframe，内层数据将还是字典格式。如果要找到children里的数据，则需设定路径，格式为：每一层的名字组成的列表。这里名字需为json数据中每一层的列表名。此例中，我们有3层数据，要找到做内层的children，需要设置为[‘children’, ‘children’]。</p>
+<blockquote>
+<p>这里可能会报这样的错误：<strong>KeyError: ‘children’</strong></p>
+<p>是因为有的数据有一个children，有的数据有children的children，所以他无法识别只有一个children数据的路径，所以这里我们需要手动检查一下数据，把只有一个children的数据加一个空的children参数**, ‘children’: [{‘name’: 0}]**，这样就没问题啦。</p>
+</blockquote>
+</li>
+<li>
+<p>**meta：**添加额外列。如果我们成功取到最内层的children数据，我们还想再补充上它的上一级中的参数，就可使用这个参数。**格式：**还是按照搜索路径的方式，依次添加在列表中。最外层的数据不需要列表，直接写名字就行。</p>
+</li>
+<li>
+<p>**record_prefix’和meta_prefix：**当不同级别数据中有重名时使用，否则报错。</p>
+</li>
+<li>
+<p>**errors：**忽略缺少key的情况。数据中，有的children的key有，有的children的key没有，这样就会报错。写上就可以忽略这些错误正常执行。</p>
+</li>
+</ul>
+<p>2、处理完每一组数据，把数据追加到上一次循环好的dataframe中。</p>
+<p>3、最后输出csv格式数据。</p>
+<h2 id="Part2-excel数据→多层嵌套json数据">Part2: excel数据→多层嵌套json数据</h2>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">"旭日图数据.csv"</span>)</span><br><span class="line"></span><br><span class="line">data = []</span><br><span class="line"><span class="keyword">for</span> first <span class="keyword">in</span> df[<span class="string">"name1"</span>].unique():</span><br><span class="line">    first_dict = {}</span><br><span class="line">    first_dict[<span class="string">"name"</span>] = first</span><br><span class="line">    first_dict[<span class="string">"itemStyle"</span>] = {<span class="string">"color"</span>: df[df[<span class="string">"name1"</span>] == first][<span class="string">"color1"</span>].unique()[<span class="number">0</span>]}</span><br><span class="line">    first_list = []</span><br><span class="line">    first_data = df[df[<span class="string">"name1"</span>] == first]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> second <span class="keyword">in</span> first_data[<span class="string">"name2"</span>].unique():</span><br><span class="line">        second_dict = {}</span><br><span class="line">        second_dict[<span class="string">"name"</span>] = second</span><br><span class="line">        second_dict[<span class="string">"itemStyle"</span>] = {<span class="string">"color"</span>: first_data[first_data[<span class="string">"name2"</span>] == second][<span class="string">"color2"</span>].unique()[<span class="number">0</span>]}</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (first_data[first_data[<span class="string">"name2"</span>] == second][<span class="string">"name3"</span>].unique()[<span class="number">0</span>] == <span class="string">'0'</span>):</span><br><span class="line">            second_dict[<span class="string">"value"</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            second_list = []</span><br><span class="line">            second_data = first_data[first_data[<span class="string">"name2"</span>] == second]</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> third <span class="keyword">in</span> second_data[<span class="string">"name3"</span>].unique():</span><br><span class="line">                third_dict = {}</span><br><span class="line">                third_dict[<span class="string">"name"</span>] = third</span><br><span class="line">                third_dict[<span class="string">"itemStyle"</span>] = {<span class="string">"color"</span>: second_data[second_data[<span class="string">"name3"</span>] == third][<span class="string">"color3"</span>].unique()[<span class="number">0</span>]}</span><br><span class="line">                third_dict[<span class="string">"value"</span>] = <span class="number">1</span></span><br><span class="line">                second_list.append(third_dict)</span><br><span class="line">            second_dict[<span class="string">"children"</span>] = second_list</span><br><span class="line"></span><br><span class="line">        first_list.append(second_dict)</span><br><span class="line">    first_dict[<span class="string">"children"</span>] = first_list</span><br><span class="line"></span><br><span class="line">    data.append(first_dict)</span><br></pre></td></tr></tbody></table></figure>
+<p>**第一层循环：**先取出name1的数据，unique()一下（去掉重复），遍历每个名字。</p>
+<p>​					   创建一个字典，里面存放“名字”和“颜色”，</p>
+<p>​					   再创建一个列表，用来存放“children”，</p>
+<p>​					   筛选出name1的数据，用于下一级循环</p>
+<p><strong>第二层循环：</strong>（思路和第一层一样）</p>
+<p>​					   这里强调的是由于有的数据只有一个children，有的有两个，所以这里判断一下，如果name3为0，即没有第三层，则赋value=1，否则进行第三层循环</p>
+<p><strong>第三层循环：</strong>（思路和第一层一样）</p>
+<p>​					   遍历完之后就要把数据合一起了（本层的数据加到上一层的列表中，上一层的列表赋值到上一层的字典中）</p>
+]]></content>
+      <categories>
+        <category>Pyecharts</category>
+      </categories>
   </entry>
   <entry>
     <title>Road to Physics</title>
