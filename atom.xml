@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2022-11-06T08:55:21.339Z</updated>
+  <updated>2022-11-10T02:18:07.552Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论流行音乐为何兴衰更替速度快</title>
+    <link href="https://example.com/2022/11/10/%E8%AE%BA%E6%B5%81%E8%A1%8C%E9%9F%B3%E4%B9%90%E4%B8%BA%E4%BD%95%E5%85%B4%E8%A1%B0%E6%9B%B4%E6%9B%BF%E9%80%9F%E5%BA%A6%E5%BF%AB/"/>
+    <id>https://example.com/2022/11/10/%E8%AE%BA%E6%B5%81%E8%A1%8C%E9%9F%B3%E4%B9%90%E4%B8%BA%E4%BD%95%E5%85%B4%E8%A1%B0%E6%9B%B4%E6%9B%BF%E9%80%9F%E5%BA%A6%E5%BF%AB/</id>
+    <published>2022-11-10T02:18:07.000Z</published>
+    <updated>2022-11-10T02:18:07.552Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>python：多层嵌套的树状json数据和excel数据的转换</title>
