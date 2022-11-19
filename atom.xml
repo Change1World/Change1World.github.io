@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2022-11-10T02:18:07.552Z</updated>
+  <updated>2022-11-19T07:00:32.090Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -17,14 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>论流行音乐为何兴衰更替速度快</title>
-    <link href="https://example.com/2022/11/10/%E8%AE%BA%E6%B5%81%E8%A1%8C%E9%9F%B3%E4%B9%90%E4%B8%BA%E4%BD%95%E5%85%B4%E8%A1%B0%E6%9B%B4%E6%9B%BF%E9%80%9F%E5%BA%A6%E5%BF%AB/"/>
-    <id>https://example.com/2022/11/10/%E8%AE%BA%E6%B5%81%E8%A1%8C%E9%9F%B3%E4%B9%90%E4%B8%BA%E4%BD%95%E5%85%B4%E8%A1%B0%E6%9B%B4%E6%9B%BF%E9%80%9F%E5%BA%A6%E5%BF%AB/</id>
-    <published>2022-11-10T02:18:07.000Z</published>
-    <updated>2022-11-10T02:18:07.552Z</updated>
+    <title>Pyecharts-桑基图</title>
+    <link href="https://example.com/2022/11/19/Pyecharts-%E6%A1%91%E5%9F%BA%E5%9B%BE/"/>
+    <id>https://example.com/2022/11/19/Pyecharts-%E6%A1%91%E5%9F%BA%E5%9B%BE/</id>
+    <published>2022-11-19T06:48:23.000Z</published>
+    <updated>2022-11-19T07:00:32.090Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;桑基图&lt;/h1&gt;
+&lt;img src=&quot;/2022/11/19/Pyecharts-%E6%A1%91%E5%9F%BA%E5%9B%BE/桑基图.png&quot; style=&quot;zoom:80%;&quot;&gt;
+&lt;h2 id=&quot;导入需要的包&quot;&gt;导入需要的包&lt;/h2&gt;
+&lt;figure</summary>
+        
+      
     
     
     
+    <category term="Pyecharts" scheme="https://example.com/categories/Pyecharts/"/>
     
     
   </entry>
