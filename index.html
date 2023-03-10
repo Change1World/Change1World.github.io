@@ -152,6 +152,173 @@
     
     
     <article
+  id="post-Echarts-开始做图"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/03/10/Echarts-%E5%BC%80%E5%A7%8B%E5%81%9A%E5%9B%BE/"
+    >Echarts-开始做图</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/03/10/Echarts-%E5%BC%80%E5%A7%8B%E5%81%9A%E5%9B%BE/" class="article-date">
+  <time datetime="2023-03-10T11:49:31.000Z" itemprop="datePublished">2023-03-10</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Echarts/">Echarts</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1>Echarts</h1>
+<h2 id="选取模板">选取模板</h2>
+<p>选取官方示例中的基础柱状图作为示例，链接如下：<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/zh/editor.html?c=bar-simple">Examples - Apache ECharts</a></p>
+<p>选择<code>完整代码</code>，除去第一行粘贴入框架中option部分。</p>
+<h2 id="数据准备">数据准备</h2>
+<p>首先，把数据粘贴到Echarts官方给出的“表格工具”中，链接如下：<a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/spreadsheet.html">Spreadsheet Tool - Apache ECharts</a>。</p>
+<p>删除第一行数据。</p>
+<p>在右侧选项栏中可以对数据格式进行调整，调节数据格式与官方示例中的数据格式一致即可。</p>
+<p>把数据粘贴到代码对应位置。</p>
+<p>在浏览器中打开即可。</p>
+<h2 id="坐标轴刻度与标签对齐">坐标轴刻度与标签对齐</h2>
+<p>打开示例：<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/zh/editor.html?c=bar-tick-align">Examples - Apache ECharts</a>。</p>
+<p>找到对应代码：</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">axisTick</span>: {</span><br><span class="line">        <span class="attr">alignWithLabel</span>: <span class="literal">true</span></span><br><span class="line">      }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="设置提示框">设置提示框</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tooltip: {</span><br><span class="line">  trigger: 'axis'</span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="降序排列">降序排列</h2>
+<p>打开示例：<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/zh/editor.html?c=data-transform-sort-bar">Examples - Apache ECharts</a>。</p>
+<p>由于数据格式改变，我们重新转换格式，方法同上，选择“每两列转换成一个二维数组”。</p>
+<p>再加上上面的语句。</p>
+<h2 id="条形图">条形图</h2>
+<p>把xaxis和yaxis名字换一下就行。</p>
+<h2 id="极坐标">极坐标</h2>
+<p>打开示例：<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/zh/editor.html?c=bar-polar-stack-radial">Examples - Apache ECharts</a>。</p>
+<p>在表格工具中选择“每一列转换为一个一维数组”</p>
+<p>直接修改data中的数据即可。</p>
+<h2 id="南丁格尔玫瑰图">南丁格尔玫瑰图</h2>
+<p>官方示例：<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples/zh/editor.html?c=pie-roseType-simple">Examples - Apache ECharts</a></p>
+<p>这里可以直接修改数据。</p>
+<p>修改颜色：</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data</span>: [</span><br><span class="line">        { <span class="attr">value</span>: <span class="number">40</span>, <span class="attr">name</span>: <span class="string">'rose 1'</span> , <span class="attr">itemStyle</span>: {<span class="attr">color</span>: <span class="string">'#516b91'</span>}}</span><br><span class="line">      ]</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>缺点：数据处理不太方便，除非掌握js语言，建议外部处理好数据后在这里画图比较方便。</p>
+</blockquote>
+<h2 id="气泡图">气泡图</h2>
+<p>emphasis.focus：series（高亮当前序列），self（高亮当前值）</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
+  id="post-Echarts-准备工作"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2023/03/10/Echarts-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/"
+    >Echarts-准备工作</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/03/10/Echarts-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" class="article-date">
+  <time datetime="2023-03-10T11:48:31.000Z" itemprop="datePublished">2023-03-10</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Echarts/">Echarts</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="下载echarts">下载echarts</h2>
+<ol>
+<li>下载echarts.js文件。</li>
+<li>新建文件夹，导入<code>echarts.js</code>文件，新建<code>index.html</code>文件。</li>
+</ol>
+<h2 id="Echarts框架">Echarts框架</h2>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>ECharts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入刚刚下载的 ECharts 文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"echarts.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 为 ECharts 准备一个定义了宽高的 DOM --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span> <span class="attr">style</span>=<span class="string">"width: 600px;height:400px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 基于准备好的dom，初始化echarts实例</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">var</span> myChart = echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">'main'</span>));</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 指定图表的配置项和数据</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">var</span> option = {};</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 使用刚指定的配置项和数据显示图表。</span></span></span><br><span class="line"><span class="language-javascript">      myChart.<span class="title function_">setOption</span>(option);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="主题工具">主题工具</h2>
+<ol>
+<li>
+<p>使用默认主题：<a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/download-theme.html">主题下载 - Apache ECharts</a>。</p>
+<blockquote>
+<p>注意：使用时先引入主题，再在echarts.init(dom, ‘主题名字’)</p>
+</blockquote>
+</li>
+<li>
+<p>自定义主题：<a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/theme-builder.html">主题编辑器 - Apache ECharts</a>。</p>
+<blockquote>
+<p>设置好后，点击下载。使用时先引入主题，再在echarts.init(dom, ‘主题名字’)</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="方案一：简单粗暴">方案一：简单粗暴</h2>
+<ol>
+<li>处理数据。把excel数据在<a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/spreadsheet.html">Spreadsheet Tool - Apache ECharts</a>网站处理得到所需格式的数据。（缺点：数据必须完美，得在别的软件处理好）</li>
+<li>下载图片。（仅png）</li>
+</ol>
+<h2 id="方案二：摘代码块">方案二：摘代码块</h2>
+<p>最好还是外面处理好数据吧</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
   id="post-Pyecharts-桑基图"
   class="article article-type-post"
   itemscope
@@ -205,6 +372,106 @@
 <h2 id="完整代码">完整代码</h2>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pyecharts.charts <span class="keyword">import</span> Sankey</span><br><span class="line"><span class="keyword">from</span> pyecharts <span class="keyword">import</span> options <span class="keyword">as</span> opts</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">df: pd.DataFrame = pd.read_excel(<span class="string">r'山西大学2021年本科生转专业情况.xlsx'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># -------------------------------处理节点--------------------------------------</span></span><br><span class="line">nodes = <span class="built_in">list</span>(<span class="built_in">set</span>(df[<span class="string">'转出专业'</span>].tolist() + df[<span class="string">'转入专业'</span>].tolist() + df[<span class="string">'类型'</span>].tolist()))</span><br><span class="line">node_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nodes)):</span><br><span class="line">    <span class="built_in">dict</span> = {<span class="string">'name'</span>: nodes[i]}</span><br><span class="line">    node_list.append(<span class="built_in">dict</span>)</span><br><span class="line"><span class="comment"># print(node_list)</span></span><br><span class="line"></span><br><span class="line">node_list = [</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'建筑电气与智能化'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#FFFFD9'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'能源与动力工程'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#F4FBC2'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'环境科学与工程类'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#D1EDB3'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'建筑环境与能源应用工程'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#E7F5B1'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'机械电子工程'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#D1EDB3'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'生物科学类'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#89D1BA'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'工商管理类'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#41B6C4'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'化学类'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#64C3BE'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'电气工程及其自动化'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#2CA0C1'</span>}, <span class="string">'label'</span>: {<span class="string">'color'</span>: <span class="string">'white'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'计算机科学与技术'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#206CAE'</span>}, <span class="string">'label'</span>: {<span class="string">'color'</span>: <span class="string">'white'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'电子信息工程'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#1D89BC'</span>}, <span class="string">'label'</span>: {<span class="string">'color'</span>: <span class="string">'white'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'数据科学与大数据技术'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#2252A2'</span>}, <span class="string">'label'</span>: {<span class="string">'color'</span>: <span class="string">'white'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'经济学类'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#243A96'</span>}, <span class="string">'label'</span>: {<span class="string">'color'</span>: <span class="string">'white'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'成绩优秀'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#182A7A'</span>}, <span class="string">'label'</span>: {<span class="string">'color'</span>: <span class="string">'white'</span>}},</span><br><span class="line">    {<span class="string">'name'</span>: <span class="string">'其他情况'</span>, <span class="string">'itemStyle'</span>: {<span class="string">'color'</span>: <span class="string">'#081D58'</span>}, <span class="string">'label'</span>: {<span class="string">'color'</span>: <span class="string">'white'</span>}},</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># -------------------------------处理连线--------------------------------------</span></span><br><span class="line">df1: pd.DataFrame = df[[<span class="string">'转出专业'</span>, <span class="string">'转入专业'</span>]]</span><br><span class="line">df1[<span class="string">'次数'</span>] = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(df1)):</span><br><span class="line">    df1.loc[i, <span class="string">'次数'</span>] = df1[(df1[<span class="string">'转出专业'</span>] == df1.loc[i, <span class="string">'转出专业'</span>]) &amp; (df1[<span class="string">'转入专业'</span>] == df1.loc[i, <span class="string">'转入专业'</span>])].shape[<span class="number">0</span>]</span><br><span class="line">df1 = df1.drop_duplicates()</span><br><span class="line">df1.columns = [<span class="string">'source'</span>, <span class="string">'target'</span>, <span class="string">'value'</span>]</span><br><span class="line"><span class="comment"># print(df1)</span></span><br><span class="line"></span><br><span class="line">df2: pd.DataFrame = df[[<span class="string">'转入专业'</span>, <span class="string">'类型'</span>]]</span><br><span class="line">df2[<span class="string">'次数'</span>] = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(df2)):</span><br><span class="line">    df2.loc[i, <span class="string">'次数'</span>] = df2[(df2[<span class="string">'转入专业'</span>] == df2.loc[i, <span class="string">'转入专业'</span>]) &amp; (df2[<span class="string">'类型'</span>] == df2.loc[i, <span class="string">'类型'</span>])].shape[<span class="number">0</span>]</span><br><span class="line">df2 = df2.drop_duplicates()</span><br><span class="line">df2.columns = [<span class="string">'source'</span>, <span class="string">'target'</span>, <span class="string">'value'</span>]</span><br><span class="line"></span><br><span class="line">link_df = pd.concat([df1, df2])</span><br><span class="line"></span><br><span class="line">link_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(link_df)):</span><br><span class="line">    <span class="built_in">dict</span> = {<span class="string">'source'</span>: link_df.iloc[i, <span class="number">0</span>],</span><br><span class="line">            <span class="string">'target'</span>: link_df.iloc[i, <span class="number">1</span>],</span><br><span class="line">            <span class="string">'value'</span>: <span class="built_in">int</span>(link_df.iloc[i, <span class="number">2</span>])}</span><br><span class="line">    link_list.append(<span class="built_in">dict</span>)</span><br><span class="line"><span class="comment"># print(link_list)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -------------------------------画图--------------------------------------</span></span><br><span class="line">sankey = (Sankey(init_opts=opts.InitOpts(bg_color=<span class="string">'white'</span>))</span><br><span class="line">          .add(<span class="string">""</span>,</span><br><span class="line">               nodes=node_list,</span><br><span class="line">               links=link_list,</span><br><span class="line">               pos_left=<span class="string">"7%"</span>,</span><br><span class="line">               node_width=<span class="number">135</span>,</span><br><span class="line">               node_gap=<span class="number">0</span>,</span><br><span class="line">               layout_iterations=<span class="number">1000</span>,</span><br><span class="line">               is_draggable=<span class="literal">False</span>,</span><br><span class="line">               focus_node_adjacency=<span class="literal">True</span>,</span><br><span class="line">               linestyle_opt=opts.LineStyleOpts(opacity=<span class="number">0.7</span>, curve=<span class="number">0.5</span>, color=<span class="string">"source"</span>),</span><br><span class="line">               label_opts=opts.LabelOpts(font_size=<span class="number">12</span>, position=<span class="string">'inside'</span>)</span><br><span class="line">               )</span><br><span class="line">          .set_global_opts(title_opts=opts.TitleOpts(title=<span class="string">"转专业-桑基图"</span>))</span><br><span class="line">          )</span><br><span class="line"></span><br><span class="line">sankey.render(<span class="string">"sankey.html"</span>)</span><br><span class="line">os.system(<span class="string">"sankey.html"</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p>大功告成！</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+    
+    <article
+  id="post-量子随机数生成器"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/11/07/%E9%87%8F%E5%AD%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8/"
+    >量子随机数生成器</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/11/07/%E9%87%8F%E5%AD%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8/" class="article-date">
+  <time datetime="2022-11-07T04:05:31.000Z" itemprop="datePublished">2022-11-07</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%87%8F%E5%AD%90%E9%9A%8F%E6%9C%BA%E6%95%B0/">量子随机数</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="后处理">后处理</h2>
+<p>**背景：**由于器件的缺陷（噪声、精度等），可能对实际系统产生的随机数的随机性有影响。</p>
+<p>**目的：**使实际系统产生的随机数的随机性更好。</p>
+<blockquote>
+<p>不后处理也行，代价是随机数产生速率更低。</p>
+</blockquote>
+<h3 id="方法一：冯·诺依曼法">方法一：冯·诺依曼法</h3>
+<p>原始数据进行如下改造：</p>
+<ol>
+<li>连续出现 <code>10</code> 的，记为 <code>1</code>；</li>
+<li>连续出现 <code>01</code> 的，记为 <code>0</code>；</li>
+<li>出现 <code>00</code> <code>11</code> 的，舍弃。</li>
+</ol>
+<p>**优势：**消除原始数据的偏置。新序列中，保证$$P(01)=P(10)$$</p>
+<p>**劣势：**速率损失大。</p>
+<blockquote>
+<p><strong>均匀分布时：</strong>$$P(01)=P(10)=P(00)=P(11)$$，输入长度和输出长度之比为$$1/4$$；</p>
+<p>**一般情况：**输入长度和输出长度之比为$$(1/4-e(n)^2)$$，$$e(n)$$为原始数据的偏置。</p>
+</blockquote>
+<h3 id="方法二：逻辑异或操作">方法二：逻辑异或操作</h3>
+<p><strong>过程：</strong></p>
+<ol>
+<li>
+<p>第一种XOR方法：$$A_1\oplus A_2, A_3\oplus A_4, \cdots$$</p>
+<blockquote>
+<p>输入输出比：$$1/2$$</p>
+</blockquote>
+</li>
+<li>
+<p>第二种XOR方法：$$A_1\oplus A_2, A_2\oplus A_2, \cdots$$</p>
+<blockquote>
+<p>输入输出比：$$1$$</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>作用：</strong></p>
+<ol>
+<li>改善统计分布。经过一次异或操作，可以将任意统计分布转换为对称统计分布。多次异或下，统计分布非常接近均匀分布。</li>
+<li>可以将输出值偏置和自相关系数降低。4</li>
+</ol>
+<p>**优势：**较高的输入输出比。</p>
+<p>**劣势：**重复次数多，引入经典信息多，对于一阶自相关系数高的序列，输出序列相关性高。</p>
+<p>**适用范围：**采样速率低。</p>
+<h3 id="方法三：m-LSB操作">方法三：m-LSB操作</h3>
+<p>**过程：**保留每次采样信号$m$比特最低有效位。</p>
+<blockquote>
+<p>比方说，我们使用8比特$(n=8)$数模转换器，通过对随机源熵评估得到信息熵为$m=5$，即把每一个采样信号的最高3位舍弃，仅保留最低5位，将这些重新组合得到新输出序列。</p>
+</blockquote>
+<p>m取值越小，输出序列越接近均匀分布。</p>
  
       <!-- reward -->
       
@@ -1215,64 +1482,14 @@
 </article>
 
     
-    <article
-  id="post-hello-world"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/09/21/hello-world/"
-    >Hello World</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/09/21/hello-world/" class="article-date">
-  <time datetime="2022-09-21T12:53:41.904Z" itemprop="datePublished">2022-09-21</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>哇哦！打开新世界的大门了！<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😍</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
-<p>做网站的初衷大概是太闲，想玩玩。</p>
-<p>又或许曾经想做一名程序员，毕竟做网站是一名程序员基本的技能嘛。</p>
-<p>所以就来试试。</p>
-<p>想着在茫茫的网络中找到一块属于自己的净土，这里没有市井中的流量，没有万众瞩目下的喧嚣，嘿嘿，只有我一个人躲在网络的边缘享受属于自己的安静。没事的时候就和自己聊聊，反正没人听到<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😝</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>（不想让听到的当然不会写这里啦）</p>
-<p>当然还有一个刚需，就是想找一个类似云笔记软件，不用每天搬砖（重重的书包），走哪只要有网都可以看。看了市面上所有的软件，没有心仪的，要么付费，要么有限制，要么要下一大堆的app（内存预警）。思来想去，还是网站最适合我，只要像名字一样记住网址，四海之下，足迹天涯，只要有网，就能用。我始终感觉，未来互联网的发展趋势就应该成为这样，摆脱了手机，摆脱了电脑，未来走到哪都是屏幕，你只需要登陆自己的网站，随时办公，随时学习，这才叫真正的解放生产力<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😂</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>。</p>
-<p>害，扯远啦。</p>
-<p>To live is to change the world!</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
   </article>
   
 
+  
+  <nav class="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+  </nav>
   
 </section>
 </div>

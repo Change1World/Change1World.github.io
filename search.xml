@@ -776,4 +776,142 @@
 <p>To live is to change the world!</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Echarts-准备工作</title>
+    <url>/2023/03/10/Echarts-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/</url>
+    <content><![CDATA[<h2 id="下载echarts">下载echarts</h2>
+<ol>
+<li>下载echarts.js文件。</li>
+<li>新建文件夹，导入<code>echarts.js</code>文件，新建<code>index.html</code>文件。</li>
+</ol>
+<h2 id="Echarts框架">Echarts框架</h2>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>ECharts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入刚刚下载的 ECharts 文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"echarts.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 为 ECharts 准备一个定义了宽高的 DOM --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main"</span> <span class="attr">style</span>=<span class="string">"width: 600px;height:400px;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 基于准备好的dom，初始化echarts实例</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">var</span> myChart = echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">'main'</span>));</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 指定图表的配置项和数据</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">var</span> option = {};</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 使用刚指定的配置项和数据显示图表。</span></span></span><br><span class="line"><span class="language-javascript">      myChart.<span class="title function_">setOption</span>(option);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="主题工具">主题工具</h2>
+<ol>
+<li>
+<p>使用默认主题：<a href="https://echarts.apache.org/zh/download-theme.html">主题下载 - Apache ECharts</a>。</p>
+<blockquote>
+<p>注意：使用时先引入主题，再在echarts.init(dom, ‘主题名字’)</p>
+</blockquote>
+</li>
+<li>
+<p>自定义主题：<a href="https://echarts.apache.org/zh/theme-builder.html">主题编辑器 - Apache ECharts</a>。</p>
+<blockquote>
+<p>设置好后，点击下载。使用时先引入主题，再在echarts.init(dom, ‘主题名字’)</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="方案一：简单粗暴">方案一：简单粗暴</h2>
+<ol>
+<li>处理数据。把excel数据在<a href="https://echarts.apache.org/zh/spreadsheet.html">Spreadsheet Tool - Apache ECharts</a>网站处理得到所需格式的数据。（缺点：数据必须完美，得在别的软件处理好）</li>
+<li>下载图片。（仅png）</li>
+</ol>
+<h2 id="方案二：摘代码块">方案二：摘代码块</h2>
+<p>最好还是外面处理好数据吧</p>
+]]></content>
+      <categories>
+        <category>Echarts</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Echarts-开始做图</title>
+    <url>/2023/03/10/Echarts-%E5%BC%80%E5%A7%8B%E5%81%9A%E5%9B%BE/</url>
+    <content><![CDATA[<h1>Echarts</h1>
+<h2 id="选取模板">选取模板</h2>
+<p>选取官方示例中的基础柱状图作为示例，链接如下：<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-simple">Examples - Apache ECharts</a></p>
+<p>选择<code>完整代码</code>，除去第一行粘贴入框架中option部分。</p>
+<h2 id="数据准备">数据准备</h2>
+<p>首先，把数据粘贴到Echarts官方给出的“表格工具”中，链接如下：<a href="https://echarts.apache.org/zh/spreadsheet.html">Spreadsheet Tool - Apache ECharts</a>。</p>
+<p>删除第一行数据。</p>
+<p>在右侧选项栏中可以对数据格式进行调整，调节数据格式与官方示例中的数据格式一致即可。</p>
+<p>把数据粘贴到代码对应位置。</p>
+<p>在浏览器中打开即可。</p>
+<h2 id="坐标轴刻度与标签对齐">坐标轴刻度与标签对齐</h2>
+<p>打开示例：<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-tick-align">Examples - Apache ECharts</a>。</p>
+<p>找到对应代码：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">axisTick</span>: {</span><br><span class="line">        <span class="attr">alignWithLabel</span>: <span class="literal">true</span></span><br><span class="line">      }</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="设置提示框">设置提示框</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">tooltip: {</span><br><span class="line">  trigger: 'axis'</span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="降序排列">降序排列</h2>
+<p>打开示例：<a href="https://echarts.apache.org/examples/zh/editor.html?c=data-transform-sort-bar">Examples - Apache ECharts</a>。</p>
+<p>由于数据格式改变，我们重新转换格式，方法同上，选择“每两列转换成一个二维数组”。</p>
+<p>再加上上面的语句。</p>
+<h2 id="条形图">条形图</h2>
+<p>把xaxis和yaxis名字换一下就行。</p>
+<h2 id="极坐标">极坐标</h2>
+<p>打开示例：<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-polar-stack-radial">Examples - Apache ECharts</a>。</p>
+<p>在表格工具中选择“每一列转换为一个一维数组”</p>
+<p>直接修改data中的数据即可。</p>
+<h2 id="南丁格尔玫瑰图">南丁格尔玫瑰图</h2>
+<p>官方示例：<a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-roseType-simple">Examples - Apache ECharts</a></p>
+<p>这里可以直接修改数据。</p>
+<p>修改颜色：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">data</span>: [</span><br><span class="line">        { <span class="attr">value</span>: <span class="number">40</span>, <span class="attr">name</span>: <span class="string">'rose 1'</span> , <span class="attr">itemStyle</span>: {<span class="attr">color</span>: <span class="string">'#516b91'</span>}}</span><br><span class="line">      ]</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>缺点：数据处理不太方便，除非掌握js语言，建议外部处理好数据后在这里画图比较方便。</p>
+</blockquote>
+<h2 id="气泡图">气泡图</h2>
+<p>emphasis.focus：series（高亮当前序列），self（高亮当前值）</p>
+]]></content>
+      <categories>
+        <category>Echarts</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>量子随机数生成器</title>
+    <url>/2022/11/07/%E9%87%8F%E5%AD%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="后处理">后处理</h2>
+<p>**背景：**由于器件的缺陷（噪声、精度等），可能对实际系统产生的随机数的随机性有影响。</p>
+<p>**目的：**使实际系统产生的随机数的随机性更好。</p>
+<blockquote>
+<p>不后处理也行，代价是随机数产生速率更低。</p>
+</blockquote>
+<h3 id="方法一：冯·诺依曼法">方法一：冯·诺依曼法</h3>
+<p>原始数据进行如下改造：</p>
+<ol>
+<li>连续出现 <code>10</code> 的，记为 <code>1</code>；</li>
+<li>连续出现 <code>01</code> 的，记为 <code>0</code>；</li>
+<li>出现 <code>00</code> <code>11</code> 的，舍弃。</li>
+</ol>
+<p>**优势：**消除原始数据的偏置。新序列中，保证$$P(01)=P(10)$$</p>
+<p>**劣势：**速率损失大。</p>
+<blockquote>
+<p><strong>均匀分布时：</strong>$$P(01)=P(10)=P(00)=P(11)$$，输入长度和输出长度之比为$$1/4$$；</p>
+<p>**一般情况：**输入长度和输出长度之比为$$(1/4-e(n)^2)$$，$$e(n)$$为原始数据的偏置。</p>
+</blockquote>
+<h3 id="方法二：逻辑异或操作">方法二：逻辑异或操作</h3>
+<p><strong>过程：</strong></p>
+<ol>
+<li>
+<p>第一种XOR方法：$$A_1\oplus A_2, A_3\oplus A_4, \cdots$$</p>
+<blockquote>
+<p>输入输出比：$$1/2$$</p>
+</blockquote>
+</li>
+<li>
+<p>第二种XOR方法：$$A_1\oplus A_2, A_2\oplus A_2, \cdots$$</p>
+<blockquote>
+<p>输入输出比：$$1$$</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>作用：</strong></p>
+<ol>
+<li>改善统计分布。经过一次异或操作，可以将任意统计分布转换为对称统计分布。多次异或下，统计分布非常接近均匀分布。</li>
+<li>可以将输出值偏置和自相关系数降低。4</li>
+</ol>
+<p>**优势：**较高的输入输出比。</p>
+<p>**劣势：**重复次数多，引入经典信息多，对于一阶自相关系数高的序列，输出序列相关性高。</p>
+<p>**适用范围：**采样速率低。</p>
+<h3 id="方法三：m-LSB操作">方法三：m-LSB操作</h3>
+<p>**过程：**保留每次采样信号$m$比特最低有效位。</p>
+<blockquote>
+<p>比方说，我们使用8比特$(n=8)$数模转换器，通过对随机源熵评估得到信息熵为$m=5$，即把每一个采样信号的最高3位舍弃，仅保留最低5位，将这些重新组合得到新输出序列。</p>
+</blockquote>
+<p>m取值越小，输出序列越接近均匀分布。</p>
+]]></content>
+      <categories>
+        <category>量子随机数</category>
+      </categories>
+  </entry>
 </search>
