@@ -228,12 +228,12 @@
   </entry>
   <entry>
     <title>VScode安装教程</title>
-    <url>/2022/11/06/VScode%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <url>/2023/03/21/VScode%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1>VScode安装教程</h1>
 <h2 id="下载">下载</h2>
 <p>下载网址：<a href="https://code.visualstudio.com/Download">Download Visual Studio Code - Mac, Linux, Windows</a></p>
 <p>按电脑系统选择下载，选择System Installer里的下载，因为User Installer无法选择安装目录，只能装C盘。（windows一般选择x64吧），点击Download下载。</p>
-<p><img src="/2022/11/06/VScode%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/C:%5CUsers%5CDELL%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1679401878081.png" alt="1679401878081"></p>
+<p><img src="/2023/03/21/VScode%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/C:%5CUsers%5CDELL%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1679401878081.png" alt="1679401878081"></p>
 <h2 id="安装">安装</h2>
 <p>解压缩下载的压缩包，双击Code.exe文件。</p>
 <p>在D盘（不是C盘即可）下新建文件夹，命名VScode，选择安装在这里。</p>
