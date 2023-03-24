@@ -38,13 +38,69 @@
       </categories>
   </entry>
   <entry>
-    <title>Echarts-开始做图</title>
+    <title></title>
     <url>/2023/03/10/Echarts-%E5%BC%80%E5%A7%8B%E5%81%9A%E5%9B%BE/</url>
     <content><![CDATA[<h1>Echarts</h1>
 <h2 id="选取模板">选取模板</h2>
 <p>选取官方示例中的基础柱状图作为示例，链接如下：<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-simple">Examples - Apache ECharts</a></p>
 <p>选择<code>完整代码</code>，除去第一行粘贴入框架中option部分。</p>
 <h2 id="数据准备">数据准备</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">学院</th>
+<th style="text-align:center">男</th>
+<th style="text-align:center">女</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">物电</td>
+<td style="text-align:center">140</td>
+<td style="text-align:center">60</td>
+</tr>
+<tr>
+<td style="text-align:center">数科</td>
+<td style="text-align:center">80</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:center">经管</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">130</td>
+</tr>
+<tr>
+<td style="text-align:center">环境</td>
+<td style="text-align:center">90</td>
+<td style="text-align:center">80</td>
+</tr>
+<tr>
+<td style="text-align:center">生科</td>
+<td style="text-align:center">80</td>
+<td style="text-align:center">85</td>
+</tr>
+<tr>
+<td style="text-align:center">音乐</td>
+<td style="text-align:center">30</td>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:center">体育</td>
+<td style="text-align:center">80</td>
+<td style="text-align:center">40</td>
+</tr>
+<tr>
+<td style="text-align:center">文学</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">40</td>
+</tr>
+<tr>
+<td style="text-align:center">法学</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">120</td>
+</tr>
+</tbody>
+</table>
 <p>首先，把数据粘贴到Echarts官方给出的“表格工具”中，链接如下：<a href="https://echarts.apache.org/zh/spreadsheet.html">Spreadsheet Tool - Apache ECharts</a>。</p>
 <p>删除第一行数据。</p>
 <p>在右侧选项栏中可以对数据格式进行调整，调节数据格式与官方示例中的数据格式一致即可。</p>
@@ -54,6 +110,8 @@
 <p>打开示例：<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-tick-align">Examples - Apache ECharts</a>。</p>
 <p>找到对应代码：</p>
 <figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">axisTick</span>: {</span><br><span class="line">        <span class="attr">alignWithLabel</span>: <span class="literal">true</span></span><br><span class="line">      }</span><br></pre></td></tr></tbody></table></figure>
+<p>代码注释：</p>
+<p>tooltip：设置提示框</p>
 <h2 id="设置提示框">设置提示框</h2>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">tooltip: {</span><br><span class="line">  trigger: 'axis'</span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="降序排列">降序排列</h2>
@@ -77,9 +135,6 @@
 <h2 id="气泡图">气泡图</h2>
 <p>emphasis.focus：series（高亮当前序列），self（高亮当前值）</p>
 ]]></content>
-      <categories>
-        <category>Echarts</category>
-      </categories>
   </entry>
   <entry>
     <title>Pyecharts-关系图</title>
