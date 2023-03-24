@@ -39,7 +39,7 @@
   </entry>
   <entry>
     <title>Echarts-开始做图</title>
-    <url>/2023/03/24/Echarts-%E5%BC%80%E5%A7%8B%E5%81%9A%E5%9B%BE/</url>
+    <url>/2023/03/15/Echarts-%E5%BC%80%E5%A7%8B%E5%81%9A%E5%9B%BE/</url>
     <content><![CDATA[<h1>Echarts</h1>
 <h2 id="选取模板">选取模板</h2>
 <p>选取官方示例中的基础柱状图作为示例，链接如下：<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-simple">Examples - Apache ECharts</a></p>
