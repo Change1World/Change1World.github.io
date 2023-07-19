@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>关于我 |  活着就是为了改变世界</title>
+      <title>Labview |  活着就是为了改变世界</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -56,8 +56,8 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="page-"
-  class="article article-type-page"
+  id="post-Labview"
+  class="article article-type-post"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
@@ -67,19 +67,111 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  关于我
+  Labview
 </h1>
  
 
       
     </header>
-       
+     
+    <div class="article-meta">
+      <a href="/2023/07/14/Labview/" class="article-date">
+  <time datetime="2023-07-14T03:40:23.000Z" itemprop="datePublished">2023-07-14</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Labview/">Labview</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">898</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="改变世界-发现世界的美好">改变世界&amp;发现世界的美好</h2>
-<p>想着在茫茫的网络中找到一块属于自己的净土，这里没有市井中的流量，没有万众瞩目下的喧嚣，嘿嘿，只有我一个人躲在网络的边缘享受属于自己的安静。没事的时候就和自己聊聊，反正没人听到<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😝</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f61d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>（不想让听到的当然不会写这里啦）</p>
-<p>当然还有一个刚需，就是想找一个类似云笔记软件，不用每天搬砖（重重的书包），走哪只要有网都可以看。看了市面上所有的软件，没有心仪的，要么付费，要么有限制，要么要下一大堆的app（内存预警）。思来想去，还是网站最适合我，只要像名字一样记住网址，四海之下，足迹天涯，只要有网，就能用。我始终感觉，未来互联网的发展趋势就应该成为这样，摆脱了手机，摆脱了电脑，未来走到哪都是屏幕，你只需要登陆自己的网站，随时办公，随时学习，这才叫真正的解放生产力<span class="github-emoji" style="display:inline;vertical-align:middle"><span>😂</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f602.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>。</p>
-<h1>To live is to change the world!</h1>
+  <h2 id="自定义窗口">自定义窗口</h2>
+<p>去掉滚动条：右上角右键–VI属性–窗口外观–自定义–取消勾选显示滚动条</p>
+<p>窗口大小：右上角右键–VI属性–窗口大小，拉动边框调到最小即可。</p>
+<h2 id="自定义控件制作">自定义控件制作</h2>
+<ol>
+<li>在前面板右击选择需要修改的控件（如布尔圆形指示灯），拉大点便于调整；</li>
+<li>右键–制作自定义类型–打开自定义类型–点击小扳手–右键–图片项查看–以相同大小导入，每张图片逐一替换，删掉后面的背景；</li>
+<li>最后保存即可</li>
+</ol>
+<h2 id="获取前面板上所有的控件">获取前面板上所有的控件</h2>
+<p>右键空白–应用程序控制–VI服务器引用（允许用户动态控制前面板控件、VI和LabVIEW环境的一系列函数）。</p>
+<p>右键空白–应用程序控制–属性节点（获取或设置对象的属性），本VI-引用，属性节点选择前面板。</p>
+<p>右键空白–应用程序控制–属性节点，前面板-引用，属性节点选择控件。</p>
+<p>控件–创建显示控件（数组，元素为控件句柄）</p>
+<h2 id="获取控件高度">获取控件高度</h2>
+<p>应用程序控制–属性节点（区域高度）</p>
+<h2 id="while循环遍历每个控件">while循环遍历每个控件</h2>
+<p>先创建while循环框，终止条件false。</p>
+<p>输入数据：控件句柄簇–右键–创建–属性节点–值；控件标签数组–右键–创建–属性节点–值。</p>
+<p>截取控件标签前两个字符。</p>
+<p>如果控件标签的字符串前两个字符为“石块”，位置加30。</p>
+<h2 id="for循环">for循环</h2>
+<p>移位寄存器：从一个迭代传输数据到下一个迭代</p>
+<p>满足一定条件跳出循环（break）：右键循环框–条件接线端当运行到里面时，把里面的True连接到停止按钮。右键框上的下方块选择未连接时使用默认。</p>
+<h2 id="程序执行顺序">程序执行顺序</h2>
+<p>平铺式顺序结构</p>
+<p>通过错误簇连接</p>
+<h2 id="程序暂停一下接着运行">程序暂停一下接着运行</h2>
+<p>定时–等待–创建常量100ms</p>
+<h2 id="添加随机数">添加随机数</h2>
+<p>右键–数值–随机数，设置上限和下限。</p>
+<p>U64：[0,100]</p>
+<p>I64：[-100,100]</p>
+<h2 id="查看数据类型">查看数据类型</h2>
+<p>输出端口右键创建显示控件。</p>
+<p>常量：右键–表示法</p>
+<p>U32：无符号32位整型</p>
+<p>I32：有符号32位整型</p>
+<h2 id="强制数据类型转换">强制数据类型转换</h2>
+<p>右键–数值–转换–转换为长整型</p>
+<h2 id="键盘信号采集">键盘信号采集</h2>
+<p>右键–互联接口–输入设备控制</p>
+<p>初始化键盘、输入数据采集、关闭输入设备</p>
+<h2 id="获取键盘输入的值">获取键盘输入的值</h2>
+<p>输入数据采集-创建显示控件，复制一份出来，右键–转换为常量，把里面的键拉出来，其他删除即可。</p>
+<h2 id="获取当前文件目录">获取当前文件目录</h2>
+<ol>
+<li>右键–文件IO–文件常量–应用程序目录</li>
+<li>使用字符串连接选择下一级目录。若要屏幕输入可以右键创建输入控件。</li>
+<li>右键–文件IO–创建路径，应用程序目录-基路径，连接字符串-相对路径</li>
+</ol>
+<h2 id="框架：确保程序运行一次-指定程序运行时执行">框架：确保程序运行一次/指定程序运行时执行</h2>
+<p>添加一个bool指示灯控件，需要运行的程序放在条件框内，里面放一个控制指示灯的属性节点值，赋值False。</p>
+<p>程序框图外给bool指示灯赋初值False</p>
+<p>使用的时候给bool指示灯赋初值True。</p>
+<h2 id="快捷方式">快捷方式</h2>
+<p><strong>框太小</strong>：鼠标变成十字，按住ctrl，往外拉，循环框等量外移</p>
+<p>**面板切换：**ctrl+E</p>
+<p>**两面平铺：**ctrl+T</p>
+<p>**删除断线：**ctrl+B</p>
+<p>整理程序框图：ctrl+U</p>
  
       <!-- reward -->
       
@@ -144,7 +236,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/about/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/2023/07/14/Labview/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -153,9 +245,37 @@
   </div>
 
    
+  <nav class="article-nav">
+    
+      <a href="/2023/07/16/C++%E9%A1%B9%E7%9B%AE%EF%BC%9AAI%E4%BA%94%E5%AD%90%E6%A3%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            C++项目：AI五子棋
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2023/07/14/%E5%AE%9D%E8%97%8F%E8%BD%AF%E4%BB%B6/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">宝藏软件</div>
+      </a>
+    
+  </nav>
+
   
    
   
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
 </article>
 
 </section>
@@ -310,6 +430,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link

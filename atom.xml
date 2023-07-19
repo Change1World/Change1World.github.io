@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2023-03-21T13:25:47.816Z</updated>
+  <updated>2023-07-16T11:14:52.504Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -15,6 +15,107 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++项目：AI五子棋</title>
+    <link href="https://example.com/2023/07/16/C++%E9%A1%B9%E7%9B%AE%EF%BC%9AAI%E4%BA%94%E5%AD%90%E6%A3%8B/"/>
+    <id>https://example.com/2023/07/16/C++%E9%A1%B9%E7%9B%AE%EF%BC%9AAI%E4%BA%94%E5%AD%90%E6%A3%8B/</id>
+    <published>2023-07-16T09:13:31.000Z</published>
+    <updated>2023-07-16T11:14:52.504Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;C++项目：AI五子棋&lt;/h1&gt;
+&lt;p&gt;搭建框架：项目名右键–添加–类。&lt;/p&gt;
+&lt;p&gt;设计对外接口：先在头文件中设计对外接口。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="C++" scheme="https://example.com/categories/C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Labview</title>
+    <link href="https://example.com/2023/07/14/Labview/"/>
+    <id>https://example.com/2023/07/14/Labview/</id>
+    <published>2023-07-14T03:40:23.000Z</published>
+    <updated>2023-07-16T04:01:53.166Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;自定义窗口&quot;&gt;自定义窗口&lt;/h2&gt;
+&lt;p&gt;去掉滚动条：右上角右键–VI属性–窗口外观–自定义–取消勾选显示滚动条&lt;/p&gt;
+&lt;p&gt;窗口大小：右上角右键–VI属性–窗口大小，拉动边框调到最小即可。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Labview" scheme="https://example.com/categories/Labview/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>宝藏软件</title>
+    <link href="https://example.com/2023/07/14/%E5%AE%9D%E8%97%8F%E8%BD%AF%E4%BB%B6/"/>
+    <id>https://example.com/2023/07/14/%E5%AE%9D%E8%97%8F%E8%BD%AF%E4%BB%B6/</id>
+    <published>2023-07-14T03:40:23.000Z</published>
+    <updated>2023-07-14T03:44:06.838Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="APP" scheme="https://example.com/categories/APP/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python数据处理所需要的函数</title>
+    <link href="https://example.com/2023/04/15/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E4%BD%9C%E5%9B%BE/"/>
+    <id>https://example.com/2023/04/15/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E4%BD%9C%E5%9B%BE/</id>
+    <published>2023-04-15T11:48:31.000Z</published>
+    <updated>2023-07-19T09:59:11.915Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Python数据处理所需要的函数&lt;/h1&gt;
+&lt;h2 id=&quot;数据处理：pandas&quot;&gt;数据处理：pandas&lt;/h2&gt;
+&lt;p&gt;读取Excel：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="Python" scheme="https://example.com/categories/Python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>VScode安装教程</title>
@@ -196,31 +297,6 @@
   </entry>
   
   <entry>
-    <title>Pyecharts-关系图</title>
-    <link href="https://example.com/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/"/>
-    <id>https://example.com/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/</id>
-    <published>2022-09-30T12:49:09.000Z</published>
-    <updated>2022-11-19T09:11:10.775Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;关系图&lt;/h1&gt;
-&lt;h2 id=&quot;先用转专业数据练习一下&quot;&gt;先用转专业数据练习一下&lt;/h2&gt;
-&lt;img src=&quot;/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/转专业.png&quot; style=&quot;zoom:</summary>
-        
-      
-    
-    
-    
-    <category term="Pyecharts" scheme="https://example.com/categories/Pyecharts/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Pyecharts-气泡图</title>
     <link href="https://example.com/2022/09/30/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/"/>
     <id>https://example.com/2022/09/30/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/</id>
@@ -235,6 +311,31 @@
     <summary type="html">&lt;h1&gt;气泡图&lt;/h1&gt;
 &lt;p&gt;&lt;img src=&quot;/2022/09/30/Pyecharts-%E6%B0%94%E6%B3%A1%E5%9B%BE/%E6%B0%94%E6%B3%A1%E5%9B%BE.png&quot; alt=&quot;气泡图&quot;&gt;&lt;/p&gt;
 &lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Pyecharts" scheme="https://example.com/categories/Pyecharts/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Pyecharts-关系图</title>
+    <link href="https://example.com/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/"/>
+    <id>https://example.com/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/</id>
+    <published>2022-09-30T12:49:09.000Z</published>
+    <updated>2022-11-19T09:11:10.775Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;关系图&lt;/h1&gt;
+&lt;h2 id=&quot;先用转专业数据练习一下&quot;&gt;先用转专业数据练习一下&lt;/h2&gt;
+&lt;img src=&quot;/2022/09/30/Pyecharts-%E5%85%B3%E7%B3%BB%E5%9B%BE/转专业.png&quot; style=&quot;zoom:</summary>
         
       
     
